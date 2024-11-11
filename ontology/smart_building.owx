@@ -1,0 +1,3518 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.synaptik.tech/smart_building"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.synaptik.tech/smart_building">
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <Literal>Ontologie unifiée pour les bâtiments intelligents intégrant tous les aspects: capacités, systèmes, équipements, espaces et utilisateurs.</Literal>
+    </Annotation>
+    <Annotation>
+        <AnnotationProperty abbreviatedIRI="owl:versionInfo"/>
+        <Literal>1.0</Literal>
+    </Annotation>
+    <Declaration>
+        <Class IRI="#AISystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AVEquipment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AVSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AVSystemCapacity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AccessControl"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AccessControlSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ActiveUser"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AdaptiveTemperatureControl"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AdminAccessUser"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AdminUser"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AdvancedAnalytics"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AdvancedSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AirFiltration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AirQualityMonitoring"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AirQualityRegulation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AirQualitySystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AnalyticsSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AssetLocation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AssetMaintenance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AssetTracking"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AudioConferencing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AudioSystemManagement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AudioZoning"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AugmentedReality"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#AutomatedOrchestration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BMSSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BREEAM"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BandwidthManagement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BasicAccessUser"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BehaviorAnalysis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BiometricAccess"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BodyMovement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Building"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BuildingAmenities"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BuildingManagementCapacity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BusinessContinuity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#BusinessHours"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CCTVManagement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CO2Monitoring"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Capacity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CarbonFootprintMonitoring"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CarbonReduction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CertificationScheme"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CircadianLighting"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CirculationSpace"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CityServicesIntegration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ClimateControlSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ClimateScenario"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CognitiveAutomationCapacity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ComfortCapacity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ComfortManagementEquipment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CommunicationSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConferenceSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConferenceSystemManagement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConsumptionAnalysis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ContentStreaming"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ConversationalAI"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Corridor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CustomNotifications"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CyberSecurity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataCenterSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataGovernance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataLink"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataManagementCapacity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataPoint"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataPointMetadata"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataPrivacy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DataQuality"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DaylightHarvesting"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DecisionSupport"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DemandControl"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DigitalConnectivity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DigitalContinuity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DigitalThread"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DigitalTransversalityConcept"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DigitalTransversalityManager"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DigitalTwinSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DisplayManagement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ElevatorSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EmergencyManagementEquipment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EmergencyPeriod"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EmissionsTracking"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EnergyCapacity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EnergyConsumptionMonitoring"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EnergyEfficiency"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EnergyEquipment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EnergyMetering"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EnergyOptimization"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EnergyPerformance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EnvironmentalCharacteristic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EnvironmentalMetric"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EnvironmentalMonitoringEquipment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EnvironmentalSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Equipment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EquipmentMonitoring"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EquipmentReservation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Expectation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExpectationCategory"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExtendedAccessUser"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExtendedTimeContext"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExteriorLightingSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExternalIntegrationCapacity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FailurePrediction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FireDetection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FireSafety"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Floor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FullyImplemented"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GestureRecognition"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GridFlexibility"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HVACDistributionSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HVACEquipment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HVACProductionSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HVACSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HandGesture"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ITEquipment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ITSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ITSystemCapacity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ImplementationLevel"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InactiveUser"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IndividualTemperatureControl"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IndoorAirQuality"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IndoorEnvironment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IndoorNavigation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IntegrableElement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IntegrationSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InteriorLightingSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#InventoryManagement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IoTEquipment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#IoTSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LayoutOptimization"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LeakDetection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LearningAdaptationCapacity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LightingEquipment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LightingRegulation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LightingScenario"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LightingSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LocationBasedServices"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MachineLearning"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MaintenanceGuidance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MaintenancePeriod"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MaintenanceScheduling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MaintenanceUser"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ManagerUser"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MechanicalRoom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MediaDistributionSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MediaRouting"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MeetingRoom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MobileAppAccess"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MobileCredentials"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MobileIntegration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MultimediaDistribution"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MultimodalInteractionCapacity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NABERS"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NaturalLanguageInteraction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NetworkInfrastructureManagement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NetworkMonitoring"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NetworkSecurity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NetworkSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NightMode"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OTEquipment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OTSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OccupancyAnalytics"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OccupancyBasedLighting"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OccupancyMetric"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OccupancyTracking"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Office"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OperationalDataAnalysis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OperationalPeriod"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OperatorUser"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OutdoorAirQuality"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ParkingSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PartiallyImplemented"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PatternLearning"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PeakLoadManagement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PersonalizedEnvironment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PersonalizedExperience"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PhysicalAccessControl"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PlannedImplementation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PredictiveAnalytics"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PredictiveMaintenance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PresentationSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RealTimeMonitoring"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RealTimeOccupancy"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RecyclingManagement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RegularUser"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ReservationServices"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ResilienceCapacity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ResourceAllocation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Room"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RoomBooking"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SRI"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SecurityCapacity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SecurityEquipment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SecurityMonitoring"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ServerAdministration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ServerRoom"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ServerStorageManagement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Site"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SmartBuildingConcept"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SmartCityIntegration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SmartScore"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SmokeDetection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SoundSystemControl"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Space"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpaceManagementEquipment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpaceOptimization"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpaceUtilization"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpatialMetric"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpatialOverlay"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpecializedEquipment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpecializedSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Stairway"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StorageOptimization"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Sustainability"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SustainabilityCapacity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SynchronizationStatus"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#System"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SystemCoordination"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SystemResilience"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SystemState"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TaskBasedLighting"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TechnicalResilience"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TechnicalSpace"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TechnicalUser"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TechnologyFoundation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TemperatureRegulation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TemperatureScheduling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TextualInteraction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ThreatProtection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TimeContext"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#TrendAnalysis"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UrbanMobilityIntegration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UsagePatternDetection"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UsageScenario"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#User"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UserEngagement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UserExperience"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UserExperienceCapacity"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UserGroup"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UserPreferenceManagement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UserPrivilege"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UserRight"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VOCControl"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VentilationControl"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VerticalTransportEquipment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VideoAnalytics"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VideoConferencing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VideoSurveillance"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VideoSystemManagement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VideoWallControl"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VoiceControl"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WasteManagement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WasteManagementEquipment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WasteManagementSystem"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WasteReduction"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WasteTracking"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WaterConsumptionMonitoring"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WaterEfficiency"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WaterManagement"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WaterManagementEquipment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WaterRecycling"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WayfindingService"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WebConferencing"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WiredScore"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WorkSpace"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ZonalTemperatureControl"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Zone"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#adjacentTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#belongsToGroup"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#communicatesWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#composedOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#configuresSystem"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#constrains"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#contains"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#containsEquipment"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#contributesToCertification"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#controlledBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#controlsEnvironmentOf"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#coordinatesIntegration"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#dependsOn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#enables"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#enablesExpectation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#enhances"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#ensuresDataContinuity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#facilitatesCollaboration"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#generatesData"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasAccessTo"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDigitalTwin"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasEnvironmentalImpact"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasImplementationStatus"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasMaintenanceSchedule"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPhysicalRealization"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasSchedule"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasStatus"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#implementedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#integrates"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#interactsWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#interconnectsWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isActiveDuring"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isLocatedIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#isManagedBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#learnsFrom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#locatedIn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#maintainsDigitalLink"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#manages"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#managesSystem"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#mirrorsRealWorld"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#monitoredBy"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#monitorsSpace"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#operatesSystem"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#optimizesWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#oversees"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#provides"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#servedBySystem"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#sharesDataWith"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#supervises"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#tracksDataFlow"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#validatesDataFlow"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasAccuracyRate"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasArea"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasBIMGUID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasDescription"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEfficiency"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEmail"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEnergyConsumption"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasEquipmentID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasFrequency"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasIdentifier"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasMaintenanceSchedule"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasManufacturer"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasModel"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasQuality"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasReferentialScore"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasResponseTime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasSpaceID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasStatus"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasSystemStatus"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasTargetLevel"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasTimestamp"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasUptime"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasUserID"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasVersion"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#hasVolume"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#lastSyncTime"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="rdfs:range"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Schedule"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Stakeholder"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#MaintenanceSchedule"/>
+    </Declaration>
+    <Declaration>
+        <Datatype IRI="#EquipmentStatus"/>
+    </Declaration>
+    <Declaration>
+        <Datatype abbreviatedIRI="xsd:duration"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#AISystem"/>
+        <Class IRI="#AdvancedSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AVEquipment"/>
+        <Class IRI="#Equipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AVSystem"/>
+        <Class IRI="#System"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AVSystemCapacity"/>
+        <Class IRI="#Capacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AccessControl"/>
+        <Class IRI="#SecurityCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AccessControlSystem"/>
+        <Class IRI="#SpecializedSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ActiveUser"/>
+        <Class IRI="#User"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AdaptiveTemperatureControl"/>
+        <Class IRI="#TemperatureRegulation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AdminAccessUser"/>
+        <Class IRI="#User"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AdminUser"/>
+        <Class IRI="#User"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AdvancedAnalytics"/>
+        <Class IRI="#DataManagementCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AdvancedSystem"/>
+        <Class IRI="#System"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AirFiltration"/>
+        <Class IRI="#AirQualityRegulation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AirQualityMonitoring"/>
+        <Class IRI="#SustainabilityCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AirQualityRegulation"/>
+        <Class IRI="#ComfortCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AirQualitySystem"/>
+        <Class IRI="#EnvironmentalSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AnalyticsSystem"/>
+        <Class IRI="#AdvancedSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AssetLocation"/>
+        <Class IRI="#AssetTracking"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AssetMaintenance"/>
+        <Class IRI="#AssetTracking"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AssetTracking"/>
+        <Class IRI="#BuildingManagementCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AudioConferencing"/>
+        <Class IRI="#ConferenceSystemManagement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AudioSystemManagement"/>
+        <Class IRI="#AVSystemCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AudioZoning"/>
+        <Class IRI="#AudioSystemManagement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AugmentedReality"/>
+        <Class IRI="#MultimodalInteractionCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#AutomatedOrchestration"/>
+        <Class IRI="#CognitiveAutomationCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BMSSystem"/>
+        <Class IRI="#IntegrationSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BREEAM"/>
+        <Class IRI="#CertificationScheme"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BandwidthManagement"/>
+        <Class IRI="#NetworkInfrastructureManagement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BasicAccessUser"/>
+        <Class IRI="#User"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BehaviorAnalysis"/>
+        <Class IRI="#PatternLearning"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BiometricAccess"/>
+        <Class IRI="#AccessControl"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BodyMovement"/>
+        <Class IRI="#GestureRecognition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Building"/>
+        <Class IRI="#Space"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BuildingAmenities"/>
+        <Class IRI="#UserExperience"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BuildingManagementCapacity"/>
+        <Class IRI="#Capacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BusinessContinuity"/>
+        <Class IRI="#ResilienceCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BusinessHours"/>
+        <Class IRI="#TimeContext"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CCTVManagement"/>
+        <Class IRI="#VideoSurveillance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CO2Monitoring"/>
+        <Class IRI="#AirQualityRegulation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Capacity"/>
+        <Class IRI="#SmartBuildingConcept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CarbonFootprintMonitoring"/>
+        <Class IRI="#SustainabilityCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CarbonReduction"/>
+        <Class IRI="#CarbonFootprintMonitoring"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CertificationScheme"/>
+        <Class IRI="#Expectation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CircadianLighting"/>
+        <Class IRI="#LightingRegulation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CirculationSpace"/>
+        <Class IRI="#Space"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CityServicesIntegration"/>
+        <Class IRI="#SmartCityIntegration"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClimateControlSystem"/>
+        <Class IRI="#EnvironmentalSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ClimateScenario"/>
+        <Class IRI="#UsageScenario"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CognitiveAutomationCapacity"/>
+        <Class IRI="#Capacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ComfortCapacity"/>
+        <Class IRI="#Capacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ComfortManagementEquipment"/>
+        <Class IRI="#Equipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CommunicationSystem"/>
+        <Class IRI="#ITSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConferenceSystem"/>
+        <Class IRI="#AVSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConferenceSystemManagement"/>
+        <Class IRI="#AVSystemCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConsumptionAnalysis"/>
+        <Class IRI="#EnergyConsumptionMonitoring"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ContentStreaming"/>
+        <Class IRI="#MultimediaDistribution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ConversationalAI"/>
+        <Class IRI="#NaturalLanguageInteraction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Corridor"/>
+        <Class IRI="#CirculationSpace"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CustomNotifications"/>
+        <Class IRI="#PersonalizedExperience"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CyberSecurity"/>
+        <Class IRI="#ITSystemCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataCenterSystem"/>
+        <Class IRI="#ITSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataGovernance"/>
+        <Class IRI="#DataManagementCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataLink"/>
+        <Class IRI="#DigitalThread"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataManagementCapacity"/>
+        <Class IRI="#Capacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataPoint"/>
+        <Class IRI="#DigitalTransversalityConcept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataPointMetadata"/>
+        <Class IRI="#DigitalTransversalityConcept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataPrivacy"/>
+        <Class IRI="#DataGovernance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DataQuality"/>
+        <Class IRI="#DataGovernance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DaylightHarvesting"/>
+        <Class IRI="#LightingRegulation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DecisionSupport"/>
+        <Class IRI="#CognitiveAutomationCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DemandControl"/>
+        <Class IRI="#EnergyOptimization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DigitalConnectivity"/>
+        <Class IRI="#ExpectationCategory"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DigitalContinuity"/>
+        <Class IRI="#DigitalTransversalityConcept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DigitalThread"/>
+        <Class IRI="#DigitalTransversalityConcept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DigitalTransversalityConcept"/>
+        <Class IRI="#SmartBuildingConcept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DigitalTransversalityManager"/>
+        <Class IRI="#DigitalTransversalityConcept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DigitalTwinSystem"/>
+        <Class IRI="#AdvancedSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DisplayManagement"/>
+        <Class IRI="#VideoSystemManagement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ElevatorSystem"/>
+        <Class IRI="#SpecializedSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EmergencyManagementEquipment"/>
+        <Class IRI="#Equipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EmergencyPeriod"/>
+        <Class IRI="#ExtendedTimeContext"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EmissionsTracking"/>
+        <Class IRI="#CarbonFootprintMonitoring"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnergyCapacity"/>
+        <Class IRI="#Capacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnergyConsumptionMonitoring"/>
+        <Class IRI="#EnergyCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnergyEfficiency"/>
+        <Class IRI="#Sustainability"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnergyEquipment"/>
+        <Class IRI="#Equipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnergyMetering"/>
+        <Class IRI="#EnergyConsumptionMonitoring"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnergyOptimization"/>
+        <Class IRI="#EnergyCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnergyPerformance"/>
+        <Class IRI="#ExpectationCategory"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnvironmentalCharacteristic"/>
+        <Class IRI="#Space"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnvironmentalMetric"/>
+        <Class IRI="#SpatialMetric"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnvironmentalMonitoringEquipment"/>
+        <Class IRI="#Equipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EnvironmentalSystem"/>
+        <Class IRI="#System"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Equipment"/>
+        <Class IRI="#SmartBuildingConcept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EquipmentMonitoring"/>
+        <Class IRI="#PredictiveMaintenance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EquipmentReservation"/>
+        <Class IRI="#ReservationServices"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Expectation"/>
+        <Class IRI="#SmartBuildingConcept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExpectationCategory"/>
+        <Class IRI="#Expectation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExtendedAccessUser"/>
+        <Class IRI="#User"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExtendedTimeContext"/>
+        <Class IRI="#TimeContext"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExteriorLightingSystem"/>
+        <Class IRI="#LightingSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExternalIntegrationCapacity"/>
+        <Class IRI="#Capacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FailurePrediction"/>
+        <Class IRI="#PredictiveMaintenance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FireDetection"/>
+        <Class IRI="#FireSafety"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FireSafety"/>
+        <Class IRI="#SecurityCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Floor"/>
+        <Class IRI="#Space"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FullyImplemented"/>
+        <Class IRI="#ImplementationLevel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GestureRecognition"/>
+        <Class IRI="#MultimodalInteractionCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GridFlexibility"/>
+        <Class IRI="#ExpectationCategory"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HVACDistributionSystem"/>
+        <Class IRI="#HVACSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HVACEquipment"/>
+        <Class IRI="#OTEquipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HVACProductionSystem"/>
+        <Class IRI="#HVACSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HVACSystem"/>
+        <Class IRI="#OTSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HandGesture"/>
+        <Class IRI="#GestureRecognition"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ITEquipment"/>
+        <Class IRI="#Equipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ITSystem"/>
+        <Class IRI="#System"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ITSystemCapacity"/>
+        <Class IRI="#Capacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ImplementationLevel"/>
+        <Class IRI="#SmartBuildingConcept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InactiveUser"/>
+        <Class IRI="#User"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IndividualTemperatureControl"/>
+        <Class IRI="#TemperatureRegulation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IndoorAirQuality"/>
+        <Class IRI="#AirQualityMonitoring"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IndoorEnvironment"/>
+        <Class IRI="#UserExperience"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IndoorNavigation"/>
+        <Class IRI="#WayfindingService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IntegrableElement"/>
+        <Class IRI="#SmartBuildingConcept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IntegrationSystem"/>
+        <Class IRI="#System"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InteriorLightingSystem"/>
+        <Class IRI="#LightingSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#InventoryManagement"/>
+        <Class IRI="#AssetTracking"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IoTEquipment"/>
+        <Class IRI="#Equipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#IoTSystem"/>
+        <Class IRI="#IntegrationSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LayoutOptimization"/>
+        <Class IRI="#SpaceOptimization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LeakDetection"/>
+        <Class IRI="#WaterManagement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LearningAdaptationCapacity"/>
+        <Class IRI="#Capacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LightingEquipment"/>
+        <Class IRI="#OTEquipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LightingRegulation"/>
+        <Class IRI="#ComfortCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LightingScenario"/>
+        <Class IRI="#UsageScenario"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LightingSystem"/>
+        <Class IRI="#OTSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LocationBasedServices"/>
+        <Class IRI="#WayfindingService"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MachineLearning"/>
+        <Class IRI="#AdvancedAnalytics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MaintenanceGuidance"/>
+        <Class IRI="#AugmentedReality"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MaintenancePeriod"/>
+        <Class IRI="#ExtendedTimeContext"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MaintenanceScheduling"/>
+        <Class IRI="#PredictiveMaintenance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MaintenanceUser"/>
+        <Class IRI="#User"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ManagerUser"/>
+        <Class IRI="#User"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MechanicalRoom"/>
+        <Class IRI="#TechnicalSpace"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MediaDistributionSystem"/>
+        <Class IRI="#AVSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MediaRouting"/>
+        <Class IRI="#MultimediaDistribution"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MeetingRoom"/>
+        <Class IRI="#WorkSpace"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MobileAppAccess"/>
+        <Class IRI="#MobileIntegration"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MobileCredentials"/>
+        <Class IRI="#MobileIntegration"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MobileIntegration"/>
+        <Class IRI="#UserExperienceCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MultimediaDistribution"/>
+        <Class IRI="#AVSystemCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MultimodalInteractionCapacity"/>
+        <Class IRI="#Capacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NABERS"/>
+        <Class IRI="#CertificationScheme"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NaturalLanguageInteraction"/>
+        <Class IRI="#MultimodalInteractionCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NetworkInfrastructureManagement"/>
+        <Class IRI="#ITSystemCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NetworkMonitoring"/>
+        <Class IRI="#NetworkInfrastructureManagement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NetworkSecurity"/>
+        <Class IRI="#NetworkInfrastructureManagement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NetworkSystem"/>
+        <Class IRI="#ITSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NightMode"/>
+        <Class IRI="#TimeContext"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OTEquipment"/>
+        <Class IRI="#Equipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OTSystem"/>
+        <Class IRI="#System"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OccupancyAnalytics"/>
+        <Class IRI="#OccupancyTracking"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OccupancyBasedLighting"/>
+        <Class IRI="#LightingRegulation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OccupancyMetric"/>
+        <Class IRI="#SpatialMetric"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OccupancyTracking"/>
+        <Class IRI="#BuildingManagementCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Office"/>
+        <Class IRI="#WorkSpace"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OperationalDataAnalysis"/>
+        <Class IRI="#DecisionSupport"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OperationalPeriod"/>
+        <Class IRI="#ExtendedTimeContext"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OperatorUser"/>
+        <Class IRI="#User"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OutdoorAirQuality"/>
+        <Class IRI="#AirQualityMonitoring"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ParkingSystem"/>
+        <Class IRI="#SpecializedSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PartiallyImplemented"/>
+        <Class IRI="#ImplementationLevel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PatternLearning"/>
+        <Class IRI="#LearningAdaptationCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PeakLoadManagement"/>
+        <Class IRI="#EnergyOptimization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PersonalizedEnvironment"/>
+        <Class IRI="#PersonalizedExperience"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PersonalizedExperience"/>
+        <Class IRI="#UserExperienceCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PhysicalAccessControl"/>
+        <Class IRI="#AccessControl"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PlannedImplementation"/>
+        <Class IRI="#ImplementationLevel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PredictiveAnalytics"/>
+        <Class IRI="#AdvancedAnalytics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PredictiveMaintenance"/>
+        <Class IRI="#BuildingManagementCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PresentationSystem"/>
+        <Class IRI="#AVSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RealTimeMonitoring"/>
+        <Class IRI="#EnergyConsumptionMonitoring"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RealTimeOccupancy"/>
+        <Class IRI="#OccupancyTracking"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RecyclingManagement"/>
+        <Class IRI="#WasteManagement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RegularUser"/>
+        <Class IRI="#User"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ReservationServices"/>
+        <Class IRI="#UserExperienceCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ResilienceCapacity"/>
+        <Class IRI="#Capacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ResourceAllocation"/>
+        <Class IRI="#AutomatedOrchestration"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Room"/>
+        <Class IRI="#Space"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RoomBooking"/>
+        <Class IRI="#ReservationServices"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SRI"/>
+        <Class IRI="#CertificationScheme"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Schedule"/>
+        <Class IRI="#SmartBuildingConcept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SecurityCapacity"/>
+        <Class IRI="#Capacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SecurityEquipment"/>
+        <Class IRI="#OTEquipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SecurityMonitoring"/>
+        <Class IRI="#CyberSecurity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ServerAdministration"/>
+        <Class IRI="#ServerStorageManagement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ServerRoom"/>
+        <Class IRI="#TechnicalSpace"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ServerStorageManagement"/>
+        <Class IRI="#ITSystemCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Site"/>
+        <Class IRI="#Space"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmartCityIntegration"/>
+        <Class IRI="#ExternalIntegrationCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmartScore"/>
+        <Class IRI="#CertificationScheme"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SmokeDetection"/>
+        <Class IRI="#FireSafety"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SoundSystemControl"/>
+        <Class IRI="#AudioSystemManagement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Space"/>
+        <Class IRI="#SmartBuildingConcept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpaceManagementEquipment"/>
+        <Class IRI="#Equipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpaceOptimization"/>
+        <Class IRI="#BuildingManagementCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpaceUtilization"/>
+        <Class IRI="#SpaceOptimization"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpatialMetric"/>
+        <Class IRI="#Space"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpatialOverlay"/>
+        <Class IRI="#AugmentedReality"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpecializedEquipment"/>
+        <Class IRI="#Equipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpecializedSystem"/>
+        <Class IRI="#System"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stairway"/>
+        <Class IRI="#CirculationSpace"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Stakeholder"/>
+        <Class IRI="#SmartBuildingConcept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StorageOptimization"/>
+        <Class IRI="#ServerStorageManagement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Sustainability"/>
+        <Class IRI="#ExpectationCategory"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SustainabilityCapacity"/>
+        <Class IRI="#Capacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SynchronizationStatus"/>
+        <Class IRI="#DigitalTransversalityConcept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#System"/>
+        <Class IRI="#SmartBuildingConcept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SystemCoordination"/>
+        <Class IRI="#AutomatedOrchestration"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SystemResilience"/>
+        <Class IRI="#ResilienceCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SystemState"/>
+        <Class IRI="#EnvironmentalSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TaskBasedLighting"/>
+        <Class IRI="#LightingRegulation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TechnicalResilience"/>
+        <Class IRI="#ExpectationCategory"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TechnicalSpace"/>
+        <Class IRI="#Space"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TechnicalUser"/>
+        <Class IRI="#User"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TechnologyFoundation"/>
+        <Class IRI="#ExpectationCategory"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TemperatureRegulation"/>
+        <Class IRI="#ComfortCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TemperatureScheduling"/>
+        <Class IRI="#TemperatureRegulation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TextualInteraction"/>
+        <Class IRI="#NaturalLanguageInteraction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ThreatProtection"/>
+        <Class IRI="#CyberSecurity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TimeContext"/>
+        <Class IRI="#SmartBuildingConcept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#TrendAnalysis"/>
+        <Class IRI="#DecisionSupport"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UrbanMobilityIntegration"/>
+        <Class IRI="#SmartCityIntegration"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UsagePatternDetection"/>
+        <Class IRI="#PatternLearning"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UsageScenario"/>
+        <Class IRI="#SmartBuildingConcept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#User"/>
+        <Class IRI="#SmartBuildingConcept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserEngagement"/>
+        <Class IRI="#UserExperience"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserExperience"/>
+        <Class IRI="#ExpectationCategory"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserExperienceCapacity"/>
+        <Class IRI="#Capacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserGroup"/>
+        <Class IRI="#User"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserPreferenceManagement"/>
+        <Class IRI="#PersonalizedExperience"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserPrivilege"/>
+        <Class IRI="#User"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UserRight"/>
+        <Class IRI="#User"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VOCControl"/>
+        <Class IRI="#AirQualityRegulation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VentilationControl"/>
+        <Class IRI="#AirQualityRegulation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VerticalTransportEquipment"/>
+        <Class IRI="#Equipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VideoAnalytics"/>
+        <Class IRI="#VideoSurveillance"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VideoConferencing"/>
+        <Class IRI="#ConferenceSystemManagement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VideoSurveillance"/>
+        <Class IRI="#SecurityCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VideoSystemManagement"/>
+        <Class IRI="#AVSystemCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VideoWallControl"/>
+        <Class IRI="#VideoSystemManagement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VoiceControl"/>
+        <Class IRI="#NaturalLanguageInteraction"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WasteManagement"/>
+        <Class IRI="#Sustainability"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WasteManagement"/>
+        <Class IRI="#SustainabilityCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WasteManagementEquipment"/>
+        <Class IRI="#Equipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WasteManagementSystem"/>
+        <Class IRI="#EnvironmentalSystem"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WasteReduction"/>
+        <Class IRI="#WasteManagement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WasteTracking"/>
+        <Class IRI="#WasteManagement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WaterConsumptionMonitoring"/>
+        <Class IRI="#WaterManagement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WaterEfficiency"/>
+        <Class IRI="#Sustainability"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WaterManagement"/>
+        <Class IRI="#SustainabilityCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WaterManagementEquipment"/>
+        <Class IRI="#Equipment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WaterRecycling"/>
+        <Class IRI="#WaterManagement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WayfindingService"/>
+        <Class IRI="#UserExperienceCapacity"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WebConferencing"/>
+        <Class IRI="#ConferenceSystemManagement"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WiredScore"/>
+        <Class IRI="#CertificationScheme"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WorkSpace"/>
+        <Class IRI="#Space"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ZonalTemperatureControl"/>
+        <Class IRI="#TemperatureRegulation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Zone"/>
+        <Class IRI="#Space"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="rdfs:range"/>
+        <Class IRI="#SmartBuildingConcept"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class abbreviatedIRI="rdfs:range"/>
+        <AnonymousIndividual nodeID="_:0"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="rdfs:range"/>
+        <AnonymousIndividual nodeID="_:1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="rdfs:range"/>
+        <AnonymousIndividual nodeID="_:10"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="rdfs:range"/>
+        <AnonymousIndividual nodeID="_:11"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="rdfs:range"/>
+        <AnonymousIndividual nodeID="_:12"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="rdfs:range"/>
+        <AnonymousIndividual nodeID="_:13"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="rdfs:range"/>
+        <AnonymousIndividual nodeID="_:14"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="rdfs:range"/>
+        <AnonymousIndividual nodeID="_:15"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="rdfs:range"/>
+        <AnonymousIndividual nodeID="_:16"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="rdfs:range"/>
+        <AnonymousIndividual nodeID="_:17"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="rdfs:range"/>
+        <AnonymousIndividual nodeID="_:18"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="rdfs:range"/>
+        <AnonymousIndividual nodeID="_:19"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="rdfs:range"/>
+        <AnonymousIndividual nodeID="_:2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="rdfs:range"/>
+        <AnonymousIndividual nodeID="_:20"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="rdfs:range"/>
+        <AnonymousIndividual nodeID="_:21"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="rdfs:range"/>
+        <AnonymousIndividual nodeID="_:22"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="rdfs:range"/>
+        <AnonymousIndividual nodeID="_:23"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="rdfs:range"/>
+        <AnonymousIndividual nodeID="_:24"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="rdfs:range"/>
+        <AnonymousIndividual nodeID="_:25"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="rdfs:range"/>
+        <AnonymousIndividual nodeID="_:26"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="rdfs:range"/>
+        <AnonymousIndividual nodeID="_:27"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="rdfs:range"/>
+        <AnonymousIndividual nodeID="_:28"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="rdfs:range"/>
+        <AnonymousIndividual nodeID="_:29"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="rdfs:range"/>
+        <AnonymousIndividual nodeID="_:3"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="rdfs:range"/>
+        <AnonymousIndividual nodeID="_:30"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="rdfs:range"/>
+        <AnonymousIndividual nodeID="_:31"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="rdfs:range"/>
+        <AnonymousIndividual nodeID="_:4"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="rdfs:range"/>
+        <AnonymousIndividual nodeID="_:5"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="rdfs:range"/>
+        <AnonymousIndividual nodeID="_:6"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="rdfs:range"/>
+        <AnonymousIndividual nodeID="_:7"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="rdfs:range"/>
+        <AnonymousIndividual nodeID="_:8"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="rdfs:range"/>
+        <AnonymousIndividual nodeID="_:9"/>
+    </ClassAssertion>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#constrains"/>
+        <ObjectProperty IRI="#dependsOn"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#enables"/>
+        <ObjectProperty IRI="#dependsOn"/>
+    </SubObjectPropertyOf>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#adjacentTo"/>
+        <Class IRI="#Space"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#belongsToGroup"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#communicatesWith"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#composedOf"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#configuresSystem"/>
+        <Class IRI="#AdminUser"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#constrains"/>
+        <Class IRI="#Capacity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#contains"/>
+        <Class IRI="#Space"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#containsEquipment"/>
+        <Class IRI="#Space"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#contributesToCertification"/>
+        <Class IRI="#ExpectationCategory"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#controlledBy"/>
+        <Class IRI="#Space"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#controlsEnvironmentOf"/>
+        <Class IRI="#EnvironmentalSystem"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#coordinatesIntegration"/>
+        <Class IRI="#DigitalTransversalityManager"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#dependsOn"/>
+        <Class IRI="#Capacity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#dependsOn"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#enables"/>
+        <Class IRI="#Capacity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#enablesExpectation"/>
+        <Class IRI="#Capacity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#enhances"/>
+        <Class IRI="#Capacity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#ensuresDataContinuity"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#facilitatesCollaboration"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#generatesData"/>
+        <Class IRI="#Equipment"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasAccessTo"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDigitalTwin"/>
+        <Class IRI="#Equipment"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasEnvironmentalImpact"/>
+        <Class IRI="#Equipment"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasImplementationStatus"/>
+        <Class IRI="#Capacity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasMaintenanceSchedule"/>
+        <Class IRI="#Equipment"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasMaintenanceSchedule"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPhysicalRealization"/>
+        <Class IRI="#SmartBuildingConcept"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasSchedule"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasStatus"/>
+        <Class IRI="#Equipment"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasStatus"/>
+        <Class IRI="#SmartBuildingConcept"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#implementedBy"/>
+        <Class IRI="#Capacity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#integrates"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#interactsWith"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#interconnectsWith"/>
+        <Class IRI="#EnvironmentalSystem"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isActiveDuring"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isLocatedIn"/>
+        <Class IRI="#Equipment"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#isManagedBy"/>
+        <Class IRI="#Equipment"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#learnsFrom"/>
+        <Class IRI="#LearningAdaptationCapacity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#locatedIn"/>
+        <Class IRI="#Equipment"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#maintainsDigitalLink"/>
+        <Class IRI="#Equipment"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#manages"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#managesSystem"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#mirrorsRealWorld"/>
+        <Class IRI="#SmartBuildingConcept"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#monitoredBy"/>
+        <Class IRI="#Space"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#monitorsSpace"/>
+        <Class IRI="#EnvironmentalSystem"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#operatesSystem"/>
+        <Class IRI="#TechnicalUser"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#optimizesWith"/>
+        <Class IRI="#CognitiveAutomationCapacity"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#oversees"/>
+        <Class IRI="#DigitalTransversalityManager"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#provides"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#servedBySystem"/>
+        <Class IRI="#Space"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#sharesDataWith"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#supervises"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#tracksDataFlow"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#validatesDataFlow"/>
+        <Class IRI="#DigitalTransversalityManager"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#adjacentTo"/>
+        <Class IRI="#Space"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#belongsToGroup"/>
+        <Class IRI="#UserGroup"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#communicatesWith"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#composedOf"/>
+        <Class IRI="#Equipment"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#configuresSystem"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#constrains"/>
+        <Class IRI="#Capacity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#contains"/>
+        <Class IRI="#Space"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#containsEquipment"/>
+        <Class IRI="#Equipment"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#contributesToCertification"/>
+        <Class IRI="#CertificationScheme"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#controlledBy"/>
+        <Class IRI="#Equipment"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#controlsEnvironmentOf"/>
+        <Class IRI="#Space"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#coordinatesIntegration"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#dependsOn"/>
+        <Class IRI="#Capacity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#dependsOn"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#enables"/>
+        <Class IRI="#Capacity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#enablesExpectation"/>
+        <Class IRI="#Expectation"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#enhances"/>
+        <Class IRI="#Capacity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#ensuresDataContinuity"/>
+        <Class IRI="#DigitalContinuity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#facilitatesCollaboration"/>
+        <Class IRI="#Stakeholder"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#generatesData"/>
+        <Class IRI="#DataPoint"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAccessTo"/>
+        <Class IRI="#Space"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasAccessTo"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDigitalTwin"/>
+        <Class IRI="#SmartBuildingConcept"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasEnvironmentalImpact"/>
+        <Class IRI="#Space"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasImplementationStatus"/>
+        <Class IRI="#ImplementationLevel"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPhysicalRealization"/>
+        <Class IRI="#Equipment"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasSchedule"/>
+        <Class IRI="#Schedule"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#implementedBy"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#integrates"/>
+        <Class IRI="#IntegrableElement"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#interactsWith"/>
+        <Class IRI="#SmartBuildingConcept"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#interconnectsWith"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isActiveDuring"/>
+        <Class IRI="#TimeContext"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isLocatedIn"/>
+        <Class IRI="#Space"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#isManagedBy"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#learnsFrom"/>
+        <Class IRI="#Capacity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#locatedIn"/>
+        <Class IRI="#Space"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#maintainsDigitalLink"/>
+        <Class IRI="#DataPoint"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#managesSystem"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#mirrorsRealWorld"/>
+        <Class IRI="#Equipment"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#monitoredBy"/>
+        <Class IRI="#Equipment"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#monitorsSpace"/>
+        <Class IRI="#Space"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#operatesSystem"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#optimizesWith"/>
+        <Class IRI="#Capacity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#oversees"/>
+        <Class IRI="#DigitalContinuity"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#servedBySystem"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#sharesDataWith"/>
+        <Class IRI="#System"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#supervises"/>
+        <Class IRI="#User"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#tracksDataFlow"/>
+        <Class IRI="#DataPoint"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#validatesDataFlow"/>
+        <Class IRI="#DataPoint"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasAccuracyRate"/>
+        <Class IRI="#CognitiveAutomationCapacity"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasArea"/>
+        <Class IRI="#Space"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasBIMGUID"/>
+        <Class IRI="#Space"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasDescription"/>
+        <Class IRI="#SmartBuildingConcept"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasEfficiency"/>
+        <Class IRI="#EnvironmentalSystem"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasEmail"/>
+        <Class IRI="#User"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasEnergyConsumption"/>
+        <Class IRI="#EnvironmentalSystem"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasEquipmentID"/>
+        <Class IRI="#Equipment"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasFrequency"/>
+        <Class IRI="#DataPoint"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasIdentifier"/>
+        <Class IRI="#SmartBuildingConcept"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasManufacturer"/>
+        <Class IRI="#Equipment"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasModel"/>
+        <Class IRI="#Equipment"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasName"/>
+        <Class IRI="#SmartBuildingConcept"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasName"/>
+        <Class IRI="#User"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasQuality"/>
+        <Class IRI="#DataPoint"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasReferentialScore"/>
+        <Class IRI="#ExpectationCategory"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasResponseTime"/>
+        <Class IRI="#MultimodalInteractionCapacity"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasSpaceID"/>
+        <Class IRI="#Space"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasSystemStatus"/>
+        <Class IRI="#System"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasTargetLevel"/>
+        <Class IRI="#ExpectationCategory"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasTimestamp"/>
+        <Class IRI="#SmartBuildingConcept"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasUptime"/>
+        <Class IRI="#System"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasUserID"/>
+        <Class IRI="#User"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasVersion"/>
+        <Class IRI="#System"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#hasVolume"/>
+        <Class IRI="#Space"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#lastSyncTime"/>
+        <Class IRI="#DataLink"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasAccuracyRate"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasArea"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasBIMGUID"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasDescription"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasEfficiency"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasEmail"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasEnergyConsumption"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasEquipmentID"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasFrequency"/>
+        <Datatype abbreviatedIRI="xsd:duration"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasIdentifier"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasMaintenanceSchedule"/>
+        <Datatype IRI="#MaintenanceSchedule"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasMaintenanceSchedule"/>
+        <Datatype abbreviatedIRI="xsd:duration"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasManufacturer"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasModel"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasQuality"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasReferentialScore"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasResponseTime"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasSpaceID"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasStatus"/>
+        <Datatype IRI="#EquipmentStatus"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasStatus"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasSystemStatus"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasTargetLevel"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasTimestamp"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasUptime"/>
+        <Datatype abbreviatedIRI="xsd:duration"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasUserID"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasVersion"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#hasVolume"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#lastSyncTime"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AVSystem</IRI>
+        <Literal>Systèmes audiovisuels.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AVSystemCapacity</IRI>
+        <Literal>Capacités liées aux systèmes audiovisuels.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AccessControl</IRI>
+        <Literal>Contrôle d&apos;accès.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AdvancedAnalytics</IRI>
+        <Literal>Analyses avancées.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AdvancedSystem</IRI>
+        <Literal>Systèmes avancés et intelligents.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AirQualityMonitoring</IRI>
+        <Literal>Surveillance de la qualité de l&apos;air.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AirQualityRegulation</IRI>
+        <Literal>Régulation de la qualité de l&apos;air.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AssetTracking</IRI>
+        <Literal>Suivi des actifs.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AudioSystemManagement</IRI>
+        <Literal>Gestion des systèmes audio.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AugmentedReality</IRI>
+        <Literal>Fonctions de réalité augmentée.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#AutomatedOrchestration</IRI>
+        <Literal>Orchestration automatisée des systèmes.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BREEAM</IRI>
+        <Literal>Certification BREEAM.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BuildingAmenities</IRI>
+        <Literal>Services et commodités du bâtiment.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BuildingManagementCapacity</IRI>
+        <Literal>Capacités de gestion du bâtiment.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#BusinessContinuity</IRI>
+        <Literal>Continuité des activités.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Capacity</IRI>
+        <Literal>Capacités permettant d&apos;atteindre les attendus.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CarbonFootprintMonitoring</IRI>
+        <Literal>Surveillance de l&apos;empreinte carbone.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CertificationScheme</IRI>
+        <Literal>Schémas de certification disponibles.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CognitiveAutomationCapacity</IRI>
+        <Literal>Capacités d&apos;automatisation basée sur l&apos;IA.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ComfortCapacity</IRI>
+        <Literal>Capacités liées au confort des occupants.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ConferenceSystemManagement</IRI>
+        <Literal>Gestion des systèmes de conférence.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#CyberSecurity</IRI>
+        <Literal>Cybersécurité.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DataGovernance</IRI>
+        <Literal>Gouvernance des données.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DataManagementCapacity</IRI>
+        <Literal>Capacités de gestion des données.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DecisionSupport</IRI>
+        <Literal>Support à la décision intelligent.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DigitalConnectivity</IRI>
+        <Literal>Connectivité numérique (WiredScore).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DigitalContinuity</IRI>
+        <Literal>Represents continuous digital thread across lifecycle</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DigitalThread</IRI>
+        <Literal>Digital connections between model and reality</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DigitalTransversalityConcept</IRI>
+        <Literal>Core concepts for digital thread and transversality</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#DigitalTransversalityManager</IRI>
+        <Literal>Role managing digital transversality</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EnergyCapacity</IRI>
+        <Literal>Capacités liées à l&apos;énergie.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EnergyConsumptionMonitoring</IRI>
+        <Literal>Surveillance de la consommation énergétique.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EnergyEfficiency</IRI>
+        <Literal>Efficacité énergétique (BREEAM, NABERS).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EnergyOptimization</IRI>
+        <Literal>Optimisation de l&apos;utilisation de l&apos;énergie.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EnergyPerformance</IRI>
+        <Literal>Performance énergétique (SRI).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#EnvironmentalSystem</IRI>
+        <Literal>Systèmes de gestion environnementale.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Equipment</IRI>
+        <Literal>Équipements composant les systèmes.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Equipment</IRI>
+        <Literal>Équipements du bâtiment intelligent.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Expectation</IRI>
+        <Literal>Attendus et objectifs du bâtiment intelligent.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ExpectationCategory</IRI>
+        <Literal>Catégories d&apos;attendus selon les référentiels.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ExternalIntegrationCapacity</IRI>
+        <Literal>Capacités d&apos;intégration avec les systèmes externes.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#FireSafety</IRI>
+        <Literal>Sécurité incendie.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GestureRecognition</IRI>
+        <Literal>Reconnaissance des gestes.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#GridFlexibility</IRI>
+        <Literal>Flexibilité réseau (SRI).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#HVACSystem</IRI>
+        <Literal>Système HVAC.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ITSystem</IRI>
+        <Literal>Systèmes informatiques.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ITSystemCapacity</IRI>
+        <Literal>Capacités liées aux systèmes IT.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#IndoorEnvironment</IRI>
+        <Literal>Qualité de l&apos;environnement intérieur.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#IntegrationSystem</IRI>
+        <Literal>Systèmes d&apos;intégration.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LearningAdaptationCapacity</IRI>
+        <Literal>Capacités d&apos;apprentissage et d&apos;adaptation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LightingRegulation</IRI>
+        <Literal>Régulation de l&apos;éclairage.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#LightingSystem</IRI>
+        <Literal>Système d&apos;éclairage.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MobileIntegration</IRI>
+        <Literal>Intégration des appareils mobiles.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MultimediaDistribution</IRI>
+        <Literal>Gestion de la diffusion multimédia.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#MultimodalInteractionCapacity</IRI>
+        <Literal>Capacités d&apos;interaction multimodale avancée.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#NABERS</IRI>
+        <Literal>Certification NABERS.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#NaturalLanguageInteraction</IRI>
+        <Literal>Interaction en langage naturel.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#NetworkInfrastructureManagement</IRI>
+        <Literal>Gestion de l&apos;infrastructure réseau.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OTSystem</IRI>
+        <Literal>Systèmes opérationnels du bâtiment.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#OccupancyTracking</IRI>
+        <Literal>Suivi de l&apos;occupation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PatternLearning</IRI>
+        <Literal>Apprentissage des motifs.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PersonalizedExperience</IRI>
+        <Literal>Expérience personnalisée.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#PredictiveMaintenance</IRI>
+        <Literal>Maintenance prédictive.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ReservationServices</IRI>
+        <Literal>Services de réservation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ResilienceCapacity</IRI>
+        <Literal>Capacités de résilience et continuité.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SRI</IRI>
+        <Literal>Smart Readiness Indicator.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SecurityCapacity</IRI>
+        <Literal>Capacités liées à la sécurité.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ServerStorageManagement</IRI>
+        <Literal>Gestion des serveurs et du stockage.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SmartBuildingConcept</IRI>
+        <Literal>Concept racine pour tous les éléments du bâtiment intelligent.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SmartCityIntegration</IRI>
+        <Literal>Intégration avec les systèmes de ville intelligente.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SmartScore</IRI>
+        <Literal>Certification SmartScore.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Space</IRI>
+        <Literal>Espaces et dimensions spatiales du bâtiment intelligent.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Space</IRI>
+        <Literal>Espaces et dimensions spatiales.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SpaceOptimization</IRI>
+        <Literal>Optimisation des espaces.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SpecializedSystem</IRI>
+        <Literal>Systèmes spécialisés.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#Sustainability</IRI>
+        <Literal>Durabilité (SmartScore, BREEAM, NABERS).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SustainabilityCapacity</IRI>
+        <Literal>Capacités liées à la durabilité.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#System</IRI>
+        <Literal>Classe racine pour tous les systèmes.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#System</IRI>
+        <Literal>Systèmes implémentant les capacités.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#SystemResilience</IRI>
+        <Literal>Résilience des systèmes.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TechnicalResilience</IRI>
+        <Literal>Résilience technique (WiredScore).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TechnologyFoundation</IRI>
+        <Literal>Fondation technologique (SmartScore, WiredScore).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#TemperatureRegulation</IRI>
+        <Literal>Régulation de la température.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#UsageScenario</IRI>
+        <Literal>Usage scenarios for system configurations.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#User</IRI>
+        <Literal>Classe racine pour tous les utilisateurs.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#User</IRI>
+        <Literal>Utilisateurs et rôles.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#UserEngagement</IRI>
+        <Literal>Engagement utilisateur via applications mobiles et portails.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#UserExperience</IRI>
+        <Literal>Expérience utilisateur (SmartScore).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#UserExperienceCapacity</IRI>
+        <Literal>Capacités liées à l&apos;expérience utilisateur.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#VideoSurveillance</IRI>
+        <Literal>Surveillance par vidéo.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#VideoSystemManagement</IRI>
+        <Literal>Gestion des systèmes vidéo.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#WasteManagement</IRI>
+        <Literal>Gestion des déchets (BREEAM).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#WasteManagement</IRI>
+        <Literal>Gestion des déchets.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#WaterEfficiency</IRI>
+        <Literal>Gestion efficace de l&apos;eau (BREEAM).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#WaterManagement</IRI>
+        <Literal>Gestion de l&apos;eau.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#WayfindingService</IRI>
+        <Literal>Services de guidage.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#WiredScore</IRI>
+        <Literal>Certification WiredScore.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#configuresSystem</IRI>
+        <Literal>Admin users configuring systems.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#contributesToCertification</IRI>
+        <Literal>Contribution à un schéma de certification.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#coordinatesIntegration</IRI>
+        <Literal>Coordinates system integration and data flow</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#dependsOn</IRI>
+        <Literal>Dépendance entre capacités.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#enhances</IRI>
+        <Literal>Amélioration d&apos;une capacité par une autre.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#ensuresDataContinuity</IRI>
+        <Literal>System&apos;s role in maintaining data continuity</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#facilitatesCollaboration</IRI>
+        <Literal>System&apos;s capability to enable collaboration</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasAccessTo</IRI>
+        <Literal>User access rights to spaces.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasAccuracyRate</IRI>
+        <Literal>Taux de précision de l&apos;automatisation cognitive.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasReferentialScore</IRI>
+        <Literal>Score selon le référentiel correspondant.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasResponseTime</IRI>
+        <Literal>Temps de réponse des interactions.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#hasTargetLevel</IRI>
+        <Literal>Niveau cible (ex: Platinum, Gold, etc.).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#integrates</IRI>
+        <Literal>Systèmes intégrés.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#learnsFrom</IRI>
+        <Literal>Source d&apos;apprentissage pour l&apos;adaptation.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#maintainsDigitalLink</IRI>
+        <Literal>Maintains digital continuity through lifecycle</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#manages</IRI>
+        <Literal>Ressources gérées par le système.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#mirrorsRealWorld</IRI>
+        <Literal>Links digital model to physical reality</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#operatesSystem</IRI>
+        <Literal>Technical users operating specific systems.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#optimizesWith</IRI>
+        <Literal>Optimisation entre capacités.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#provides</IRI>
+        <Literal>Services fournis par le système.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>#tracksDataFlow</IRI>
+        <Literal>System&apos;s capability to track data flows</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+
+

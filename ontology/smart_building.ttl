@@ -1,0 +1,2077 @@
+@prefix : <http://www.synaptik.tech/smart_building#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.synaptik.tech/smart_building> .
+
+<http://www.synaptik.tech/smart_building> rdf:type owl:Ontology ;
+                                           rdfs:comment "Ontologie unifiée pour les bâtiments intelligents intégrant tous les aspects: capacités, systèmes, équipements, espaces et utilisateurs." ;
+                                           owl:versionInfo "1.0" .
+
+#################################################################
+#    Datatypes
+#################################################################
+
+###  http://www.synaptik.tech/smart_building#EquipmentStatus
+:EquipmentStatus rdf:type rdfs:Datatype .
+
+
+###  http://www.synaptik.tech/smart_building#MaintenanceSchedule
+:MaintenanceSchedule rdf:type rdfs:Datatype .
+
+
+###  http://www.w3.org/2001/XMLSchema#duration
+xsd:duration rdf:type rdfs:Datatype .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.synaptik.tech/smart_building#adjacentTo
+:adjacentTo rdf:type owl:ObjectProperty ;
+            rdfs:domain :Space ;
+            rdfs:range :Space .
+
+
+###  http://www.synaptik.tech/smart_building#belongsToGroup
+:belongsToGroup rdf:type owl:ObjectProperty ;
+                rdfs:domain :User ;
+                rdfs:range :UserGroup .
+
+
+###  http://www.synaptik.tech/smart_building#communicatesWith
+:communicatesWith rdf:type owl:ObjectProperty ;
+                  rdfs:domain :System ;
+                  rdfs:range :System .
+
+
+###  http://www.synaptik.tech/smart_building#composedOf
+:composedOf rdf:type owl:ObjectProperty ;
+            rdfs:domain :System ;
+            rdfs:range :Equipment .
+
+
+###  http://www.synaptik.tech/smart_building#configuresSystem
+:configuresSystem rdf:type owl:ObjectProperty ;
+                  rdfs:domain :AdminUser ;
+                  rdfs:range :System ;
+                  rdfs:comment "Admin users configuring systems." .
+
+
+###  http://www.synaptik.tech/smart_building#constrains
+:constrains rdf:type owl:ObjectProperty ;
+            rdfs:subPropertyOf :dependsOn ;
+            rdfs:domain :Capacity ;
+            rdfs:range :Capacity .
+
+
+###  http://www.synaptik.tech/smart_building#contains
+:contains rdf:type owl:ObjectProperty ;
+          rdfs:domain :Space ;
+          rdfs:range :Space .
+
+
+###  http://www.synaptik.tech/smart_building#containsEquipment
+:containsEquipment rdf:type owl:ObjectProperty ;
+                   rdfs:domain :Space ;
+                   rdfs:range :Equipment .
+
+
+###  http://www.synaptik.tech/smart_building#contributesToCertification
+:contributesToCertification rdf:type owl:ObjectProperty ;
+                            rdfs:domain :ExpectationCategory ;
+                            rdfs:range :CertificationScheme ;
+                            rdfs:comment "Contribution à un schéma de certification." .
+
+
+###  http://www.synaptik.tech/smart_building#controlledBy
+:controlledBy rdf:type owl:ObjectProperty ;
+              rdfs:domain :Space ;
+              rdfs:range :Equipment .
+
+
+###  http://www.synaptik.tech/smart_building#controlsEnvironmentOf
+:controlsEnvironmentOf rdf:type owl:ObjectProperty ;
+                       rdfs:domain :EnvironmentalSystem ;
+                       rdfs:range :Space .
+
+
+###  http://www.synaptik.tech/smart_building#coordinatesIntegration
+:coordinatesIntegration rdf:type owl:ObjectProperty ;
+                        rdfs:domain :DigitalTransversalityManager ;
+                        rdfs:range :System ;
+                        rdfs:comment "Coordinates system integration and data flow" .
+
+
+###  http://www.synaptik.tech/smart_building#dependsOn
+:dependsOn rdf:type owl:ObjectProperty ;
+           rdfs:domain :Capacity ,
+                       :System ;
+           rdfs:range :Capacity ,
+                      :System ;
+           rdfs:comment "Dépendance entre capacités." .
+
+
+###  http://www.synaptik.tech/smart_building#enables
+:enables rdf:type owl:ObjectProperty ;
+         rdfs:subPropertyOf :dependsOn ;
+         rdfs:domain :Capacity ;
+         rdfs:range :Capacity .
+
+
+###  http://www.synaptik.tech/smart_building#enablesExpectation
+:enablesExpectation rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Capacity ;
+                    rdfs:range :Expectation .
+
+
+###  http://www.synaptik.tech/smart_building#enhances
+:enhances rdf:type owl:ObjectProperty ;
+          rdfs:domain :Capacity ;
+          rdfs:range :Capacity ;
+          rdfs:comment "Amélioration d'une capacité par une autre." .
+
+
+###  http://www.synaptik.tech/smart_building#ensuresDataContinuity
+:ensuresDataContinuity rdf:type owl:ObjectProperty ;
+                       rdfs:domain :System ;
+                       rdfs:range :DigitalContinuity ;
+                       rdfs:comment "System's role in maintaining data continuity" .
+
+
+###  http://www.synaptik.tech/smart_building#facilitatesCollaboration
+:facilitatesCollaboration rdf:type owl:ObjectProperty ;
+                          rdfs:domain :System ;
+                          rdfs:range :Stakeholder ;
+                          rdfs:comment "System's capability to enable collaboration" .
+
+
+###  http://www.synaptik.tech/smart_building#generatesData
+:generatesData rdf:type owl:ObjectProperty ;
+               rdfs:domain :Equipment ;
+               rdfs:range :DataPoint .
+
+
+###  http://www.synaptik.tech/smart_building#hasAccessTo
+:hasAccessTo rdf:type owl:ObjectProperty ;
+             rdfs:domain :User ;
+             rdfs:range :Space ,
+                        :System ;
+             rdfs:comment "User access rights to spaces." .
+
+
+###  http://www.synaptik.tech/smart_building#hasDigitalTwin
+:hasDigitalTwin rdf:type owl:ObjectProperty ;
+                rdfs:domain :Equipment ;
+                rdfs:range :SmartBuildingConcept .
+
+
+###  http://www.synaptik.tech/smart_building#hasEnvironmentalImpact
+:hasEnvironmentalImpact rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Equipment ;
+                        rdfs:range :Space .
+
+
+###  http://www.synaptik.tech/smart_building#hasImplementationStatus
+:hasImplementationStatus rdf:type owl:ObjectProperty ;
+                         rdfs:domain :Capacity ;
+                         rdfs:range :ImplementationLevel .
+
+
+###  http://www.synaptik.tech/smart_building#hasMaintenanceSchedule
+:hasMaintenanceSchedule rdf:type owl:ObjectProperty ;
+                        rdfs:domain :Equipment ,
+                                    :System .
+
+
+###  http://www.synaptik.tech/smart_building#hasPhysicalRealization
+:hasPhysicalRealization rdf:type owl:ObjectProperty ;
+                        rdfs:domain :SmartBuildingConcept ;
+                        rdfs:range :Equipment .
+
+
+###  http://www.synaptik.tech/smart_building#hasSchedule
+:hasSchedule rdf:type owl:ObjectProperty ;
+             rdfs:domain :User ;
+             rdfs:range :Schedule .
+
+
+###  http://www.synaptik.tech/smart_building#hasStatus
+:hasStatus rdf:type owl:ObjectProperty ;
+           rdfs:domain :Equipment ,
+                       :SmartBuildingConcept .
+
+
+###  http://www.synaptik.tech/smart_building#implementedBy
+:implementedBy rdf:type owl:ObjectProperty ;
+               rdfs:domain :Capacity ;
+               rdfs:range :System .
+
+
+###  http://www.synaptik.tech/smart_building#integrates
+:integrates rdf:type owl:ObjectProperty ;
+            rdfs:domain :System ;
+            rdfs:range :IntegrableElement ;
+            rdfs:comment "Systèmes intégrés." .
+
+
+###  http://www.synaptik.tech/smart_building#interactsWith
+:interactsWith rdf:type owl:ObjectProperty ;
+               rdfs:domain :User ;
+               rdfs:range :SmartBuildingConcept .
+
+
+###  http://www.synaptik.tech/smart_building#interconnectsWith
+:interconnectsWith rdf:type owl:ObjectProperty ;
+                   rdfs:domain :EnvironmentalSystem ;
+                   rdfs:range :System .
+
+
+###  http://www.synaptik.tech/smart_building#isActiveDuring
+:isActiveDuring rdf:type owl:ObjectProperty ;
+                rdfs:domain :System ;
+                rdfs:range :TimeContext .
+
+
+###  http://www.synaptik.tech/smart_building#isLocatedIn
+:isLocatedIn rdf:type owl:ObjectProperty ;
+             rdfs:domain :Equipment ;
+             rdfs:range :Space .
+
+
+###  http://www.synaptik.tech/smart_building#isManagedBy
+:isManagedBy rdf:type owl:ObjectProperty ;
+             rdfs:domain :Equipment ;
+             rdfs:range :System .
+
+
+###  http://www.synaptik.tech/smart_building#learnsFrom
+:learnsFrom rdf:type owl:ObjectProperty ;
+            rdfs:domain :LearningAdaptationCapacity ;
+            rdfs:range :Capacity ;
+            rdfs:comment "Source d'apprentissage pour l'adaptation." .
+
+
+###  http://www.synaptik.tech/smart_building#locatedIn
+:locatedIn rdf:type owl:ObjectProperty ;
+           rdfs:domain :Equipment ;
+           rdfs:range :Space .
+
+
+###  http://www.synaptik.tech/smart_building#maintainsDigitalLink
+:maintainsDigitalLink rdf:type owl:ObjectProperty ;
+                      rdfs:domain :Equipment ;
+                      rdfs:range :DataPoint ;
+                      rdfs:comment "Maintains digital continuity through lifecycle" .
+
+
+###  http://www.synaptik.tech/smart_building#manages
+:manages rdf:type owl:ObjectProperty ;
+         rdfs:domain :System ;
+         rdfs:comment "Ressources gérées par le système." .
+
+
+###  http://www.synaptik.tech/smart_building#managesSystem
+:managesSystem rdf:type owl:ObjectProperty ;
+               rdfs:domain :User ;
+               rdfs:range :System .
+
+
+###  http://www.synaptik.tech/smart_building#mirrorsRealWorld
+:mirrorsRealWorld rdf:type owl:ObjectProperty ;
+                  rdfs:domain :SmartBuildingConcept ;
+                  rdfs:range :Equipment ;
+                  rdfs:comment "Links digital model to physical reality" .
+
+
+###  http://www.synaptik.tech/smart_building#monitoredBy
+:monitoredBy rdf:type owl:ObjectProperty ;
+             rdfs:domain :Space ;
+             rdfs:range :Equipment .
+
+
+###  http://www.synaptik.tech/smart_building#monitorsSpace
+:monitorsSpace rdf:type owl:ObjectProperty ;
+               rdfs:domain :EnvironmentalSystem ;
+               rdfs:range :Space .
+
+
+###  http://www.synaptik.tech/smart_building#operatesSystem
+:operatesSystem rdf:type owl:ObjectProperty ;
+                rdfs:domain :TechnicalUser ;
+                rdfs:range :System ;
+                rdfs:comment "Technical users operating specific systems." .
+
+
+###  http://www.synaptik.tech/smart_building#optimizesWith
+:optimizesWith rdf:type owl:ObjectProperty ;
+               rdfs:domain :CognitiveAutomationCapacity ;
+               rdfs:range :Capacity ;
+               rdfs:comment "Optimisation entre capacités." .
+
+
+###  http://www.synaptik.tech/smart_building#oversees
+:oversees rdf:type owl:ObjectProperty ;
+          rdfs:domain :DigitalTransversalityManager ;
+          rdfs:range :DigitalContinuity .
+
+
+###  http://www.synaptik.tech/smart_building#provides
+:provides rdf:type owl:ObjectProperty ;
+          rdfs:domain :System ;
+          rdfs:comment "Services fournis par le système." .
+
+
+###  http://www.synaptik.tech/smart_building#servedBySystem
+:servedBySystem rdf:type owl:ObjectProperty ;
+                rdfs:domain :Space ;
+                rdfs:range :System .
+
+
+###  http://www.synaptik.tech/smart_building#sharesDataWith
+:sharesDataWith rdf:type owl:ObjectProperty ;
+                rdfs:domain :System ;
+                rdfs:range :System .
+
+
+###  http://www.synaptik.tech/smart_building#supervises
+:supervises rdf:type owl:ObjectProperty ;
+            rdfs:domain :User ;
+            rdfs:range :User .
+
+
+###  http://www.synaptik.tech/smart_building#tracksDataFlow
+:tracksDataFlow rdf:type owl:ObjectProperty ;
+                rdfs:domain :System ;
+                rdfs:range :DataPoint ;
+                rdfs:comment "System's capability to track data flows" .
+
+
+###  http://www.synaptik.tech/smart_building#validatesDataFlow
+:validatesDataFlow rdf:type owl:ObjectProperty ;
+                   rdfs:domain :DigitalTransversalityManager ;
+                   rdfs:range :DataPoint .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.synaptik.tech/smart_building#hasAccuracyRate
+:hasAccuracyRate rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :CognitiveAutomationCapacity ;
+                 rdfs:range xsd:decimal ;
+                 rdfs:comment "Taux de précision de l'automatisation cognitive." .
+
+
+###  http://www.synaptik.tech/smart_building#hasArea
+:hasArea rdf:type owl:DatatypeProperty ;
+         rdfs:domain :Space ;
+         rdfs:range xsd:decimal .
+
+
+###  http://www.synaptik.tech/smart_building#hasBIMGUID
+:hasBIMGUID rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Space ;
+            rdfs:range xsd:string .
+
+
+###  http://www.synaptik.tech/smart_building#hasDescription
+:hasDescription rdf:type owl:DatatypeProperty ;
+                rdfs:domain :SmartBuildingConcept ;
+                rdfs:range xsd:string .
+
+
+###  http://www.synaptik.tech/smart_building#hasEfficiency
+:hasEfficiency rdf:type owl:DatatypeProperty ;
+               rdfs:domain :EnvironmentalSystem ;
+               rdfs:range xsd:decimal .
+
+
+###  http://www.synaptik.tech/smart_building#hasEmail
+:hasEmail rdf:type owl:DatatypeProperty ;
+          rdfs:domain :User ;
+          rdfs:range xsd:string .
+
+
+###  http://www.synaptik.tech/smart_building#hasEnergyConsumption
+:hasEnergyConsumption rdf:type owl:DatatypeProperty ;
+                      rdfs:domain :EnvironmentalSystem ;
+                      rdfs:range xsd:decimal .
+
+
+###  http://www.synaptik.tech/smart_building#hasEquipmentID
+:hasEquipmentID rdf:type owl:DatatypeProperty ;
+                rdfs:domain :Equipment ;
+                rdfs:range xsd:string .
+
+
+###  http://www.synaptik.tech/smart_building#hasFrequency
+:hasFrequency rdf:type owl:DatatypeProperty ;
+              rdfs:domain :DataPoint ;
+              rdfs:range xsd:duration .
+
+
+###  http://www.synaptik.tech/smart_building#hasIdentifier
+:hasIdentifier rdf:type owl:DatatypeProperty ;
+               rdfs:domain :SmartBuildingConcept ;
+               rdfs:range xsd:string .
+
+
+###  http://www.synaptik.tech/smart_building#hasMaintenanceSchedule
+:hasMaintenanceSchedule rdf:type owl:DatatypeProperty ;
+                        rdfs:range :MaintenanceSchedule ,
+                                   xsd:duration .
+
+
+###  http://www.synaptik.tech/smart_building#hasManufacturer
+:hasManufacturer rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :Equipment ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.synaptik.tech/smart_building#hasModel
+:hasModel rdf:type owl:DatatypeProperty ;
+          rdfs:domain :Equipment ;
+          rdfs:range xsd:string .
+
+
+###  http://www.synaptik.tech/smart_building#hasName
+:hasName rdf:type owl:DatatypeProperty ;
+         rdfs:domain :SmartBuildingConcept ,
+                     :User ;
+         rdfs:range xsd:string .
+
+
+###  http://www.synaptik.tech/smart_building#hasQuality
+:hasQuality rdf:type owl:DatatypeProperty ;
+            rdfs:domain :DataPoint ;
+            rdfs:range xsd:decimal .
+
+
+###  http://www.synaptik.tech/smart_building#hasReferentialScore
+:hasReferentialScore rdf:type owl:DatatypeProperty ;
+                     rdfs:domain :ExpectationCategory ;
+                     rdfs:range xsd:decimal ;
+                     rdfs:comment "Score selon le référentiel correspondant." .
+
+
+###  http://www.synaptik.tech/smart_building#hasResponseTime
+:hasResponseTime rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :MultimodalInteractionCapacity ;
+                 rdfs:range xsd:decimal ;
+                 rdfs:comment "Temps de réponse des interactions." .
+
+
+###  http://www.synaptik.tech/smart_building#hasSpaceID
+:hasSpaceID rdf:type owl:DatatypeProperty ;
+            rdfs:domain :Space ;
+            rdfs:range xsd:string .
+
+
+###  http://www.synaptik.tech/smart_building#hasStatus
+:hasStatus rdf:type owl:DatatypeProperty ;
+           rdfs:range :EquipmentStatus ,
+                      xsd:string .
+
+
+###  http://www.synaptik.tech/smart_building#hasSystemStatus
+:hasSystemStatus rdf:type owl:DatatypeProperty ;
+                 rdfs:domain :System ;
+                 rdfs:range xsd:string .
+
+
+###  http://www.synaptik.tech/smart_building#hasTargetLevel
+:hasTargetLevel rdf:type owl:DatatypeProperty ;
+                rdfs:domain :ExpectationCategory ;
+                rdfs:range xsd:string ;
+                rdfs:comment "Niveau cible (ex: Platinum, Gold, etc.)." .
+
+
+###  http://www.synaptik.tech/smart_building#hasTimestamp
+:hasTimestamp rdf:type owl:DatatypeProperty ;
+              rdfs:domain :SmartBuildingConcept ;
+              rdfs:range xsd:dateTime .
+
+
+###  http://www.synaptik.tech/smart_building#hasUptime
+:hasUptime rdf:type owl:DatatypeProperty ;
+           rdfs:domain :System ;
+           rdfs:range xsd:duration .
+
+
+###  http://www.synaptik.tech/smart_building#hasUserID
+:hasUserID rdf:type owl:DatatypeProperty ;
+           rdfs:domain :User ;
+           rdfs:range xsd:string .
+
+
+###  http://www.synaptik.tech/smart_building#hasVersion
+:hasVersion rdf:type owl:DatatypeProperty ;
+            rdfs:domain :System ;
+            rdfs:range xsd:string .
+
+
+###  http://www.synaptik.tech/smart_building#hasVolume
+:hasVolume rdf:type owl:DatatypeProperty ;
+           rdfs:domain :Space ;
+           rdfs:range xsd:decimal .
+
+
+###  http://www.synaptik.tech/smart_building#lastSyncTime
+:lastSyncTime rdf:type owl:DatatypeProperty ;
+              rdfs:domain :DataLink ;
+              rdfs:range xsd:dateTime .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.synaptik.tech/smart_building#AISystem
+:AISystem rdf:type owl:Class ;
+          rdfs:subClassOf :AdvancedSystem .
+
+
+###  http://www.synaptik.tech/smart_building#AVEquipment
+:AVEquipment rdf:type owl:Class ;
+             rdfs:subClassOf :Equipment .
+
+
+###  http://www.synaptik.tech/smart_building#AVSystem
+:AVSystem rdf:type owl:Class ;
+          rdfs:subClassOf :System ;
+          rdfs:comment "Systèmes audiovisuels." .
+
+
+###  http://www.synaptik.tech/smart_building#AVSystemCapacity
+:AVSystemCapacity rdf:type owl:Class ;
+                  rdfs:subClassOf :Capacity ;
+                  rdfs:comment "Capacités liées aux systèmes audiovisuels." .
+
+
+###  http://www.synaptik.tech/smart_building#AccessControl
+:AccessControl rdf:type owl:Class ;
+               rdfs:subClassOf :SecurityCapacity ;
+               rdfs:comment "Contrôle d'accès." .
+
+
+###  http://www.synaptik.tech/smart_building#AccessControlSystem
+:AccessControlSystem rdf:type owl:Class ;
+                     rdfs:subClassOf :SpecializedSystem .
+
+
+###  http://www.synaptik.tech/smart_building#ActiveUser
+:ActiveUser rdf:type owl:Class ;
+            rdfs:subClassOf :User .
+
+
+###  http://www.synaptik.tech/smart_building#AdaptiveTemperatureControl
+:AdaptiveTemperatureControl rdf:type owl:Class ;
+                            rdfs:subClassOf :TemperatureRegulation .
+
+
+###  http://www.synaptik.tech/smart_building#AdminAccessUser
+:AdminAccessUser rdf:type owl:Class ;
+                 rdfs:subClassOf :User .
+
+
+###  http://www.synaptik.tech/smart_building#AdminUser
+:AdminUser rdf:type owl:Class ;
+           rdfs:subClassOf :User .
+
+
+###  http://www.synaptik.tech/smart_building#AdvancedAnalytics
+:AdvancedAnalytics rdf:type owl:Class ;
+                   rdfs:subClassOf :DataManagementCapacity ;
+                   rdfs:comment "Analyses avancées." .
+
+
+###  http://www.synaptik.tech/smart_building#AdvancedSystem
+:AdvancedSystem rdf:type owl:Class ;
+                rdfs:subClassOf :System ;
+                rdfs:comment "Systèmes avancés et intelligents." .
+
+
+###  http://www.synaptik.tech/smart_building#AirFiltration
+:AirFiltration rdf:type owl:Class ;
+               rdfs:subClassOf :AirQualityRegulation .
+
+
+###  http://www.synaptik.tech/smart_building#AirQualityMonitoring
+:AirQualityMonitoring rdf:type owl:Class ;
+                      rdfs:subClassOf :SustainabilityCapacity ;
+                      rdfs:comment "Surveillance de la qualité de l'air." .
+
+
+###  http://www.synaptik.tech/smart_building#AirQualityRegulation
+:AirQualityRegulation rdf:type owl:Class ;
+                      rdfs:subClassOf :ComfortCapacity ;
+                      rdfs:comment "Régulation de la qualité de l'air." .
+
+
+###  http://www.synaptik.tech/smart_building#AirQualitySystem
+:AirQualitySystem rdf:type owl:Class ;
+                  rdfs:subClassOf :EnvironmentalSystem .
+
+
+###  http://www.synaptik.tech/smart_building#AnalyticsSystem
+:AnalyticsSystem rdf:type owl:Class ;
+                 rdfs:subClassOf :AdvancedSystem .
+
+
+###  http://www.synaptik.tech/smart_building#AssetLocation
+:AssetLocation rdf:type owl:Class ;
+               rdfs:subClassOf :AssetTracking .
+
+
+###  http://www.synaptik.tech/smart_building#AssetMaintenance
+:AssetMaintenance rdf:type owl:Class ;
+                  rdfs:subClassOf :AssetTracking .
+
+
+###  http://www.synaptik.tech/smart_building#AssetTracking
+:AssetTracking rdf:type owl:Class ;
+               rdfs:subClassOf :BuildingManagementCapacity ;
+               rdfs:comment "Suivi des actifs." .
+
+
+###  http://www.synaptik.tech/smart_building#AudioConferencing
+:AudioConferencing rdf:type owl:Class ;
+                   rdfs:subClassOf :ConferenceSystemManagement .
+
+
+###  http://www.synaptik.tech/smart_building#AudioSystemManagement
+:AudioSystemManagement rdf:type owl:Class ;
+                       rdfs:subClassOf :AVSystemCapacity ;
+                       rdfs:comment "Gestion des systèmes audio." .
+
+
+###  http://www.synaptik.tech/smart_building#AudioZoning
+:AudioZoning rdf:type owl:Class ;
+             rdfs:subClassOf :AudioSystemManagement .
+
+
+###  http://www.synaptik.tech/smart_building#AugmentedReality
+:AugmentedReality rdf:type owl:Class ;
+                  rdfs:subClassOf :MultimodalInteractionCapacity ;
+                  rdfs:comment "Fonctions de réalité augmentée." .
+
+
+###  http://www.synaptik.tech/smart_building#AutomatedOrchestration
+:AutomatedOrchestration rdf:type owl:Class ;
+                        rdfs:subClassOf :CognitiveAutomationCapacity ;
+                        rdfs:comment "Orchestration automatisée des systèmes." .
+
+
+###  http://www.synaptik.tech/smart_building#BMSSystem
+:BMSSystem rdf:type owl:Class ;
+           rdfs:subClassOf :IntegrationSystem .
+
+
+###  http://www.synaptik.tech/smart_building#BREEAM
+:BREEAM rdf:type owl:Class ;
+        rdfs:subClassOf :CertificationScheme ;
+        rdfs:comment "Certification BREEAM." .
+
+
+###  http://www.synaptik.tech/smart_building#BandwidthManagement
+:BandwidthManagement rdf:type owl:Class ;
+                     rdfs:subClassOf :NetworkInfrastructureManagement .
+
+
+###  http://www.synaptik.tech/smart_building#BasicAccessUser
+:BasicAccessUser rdf:type owl:Class ;
+                 rdfs:subClassOf :User .
+
+
+###  http://www.synaptik.tech/smart_building#BehaviorAnalysis
+:BehaviorAnalysis rdf:type owl:Class ;
+                  rdfs:subClassOf :PatternLearning .
+
+
+###  http://www.synaptik.tech/smart_building#BiometricAccess
+:BiometricAccess rdf:type owl:Class ;
+                 rdfs:subClassOf :AccessControl .
+
+
+###  http://www.synaptik.tech/smart_building#BodyMovement
+:BodyMovement rdf:type owl:Class ;
+              rdfs:subClassOf :GestureRecognition .
+
+
+###  http://www.synaptik.tech/smart_building#Building
+:Building rdf:type owl:Class ;
+          rdfs:subClassOf :Space .
+
+
+###  http://www.synaptik.tech/smart_building#BuildingAmenities
+:BuildingAmenities rdf:type owl:Class ;
+                   rdfs:subClassOf :UserExperience ;
+                   rdfs:comment "Services et commodités du bâtiment." .
+
+
+###  http://www.synaptik.tech/smart_building#BuildingManagementCapacity
+:BuildingManagementCapacity rdf:type owl:Class ;
+                            rdfs:subClassOf :Capacity ;
+                            rdfs:comment "Capacités de gestion du bâtiment." .
+
+
+###  http://www.synaptik.tech/smart_building#BusinessContinuity
+:BusinessContinuity rdf:type owl:Class ;
+                    rdfs:subClassOf :ResilienceCapacity ;
+                    rdfs:comment "Continuité des activités." .
+
+
+###  http://www.synaptik.tech/smart_building#BusinessHours
+:BusinessHours rdf:type owl:Class ;
+               rdfs:subClassOf :TimeContext .
+
+
+###  http://www.synaptik.tech/smart_building#CCTVManagement
+:CCTVManagement rdf:type owl:Class ;
+                rdfs:subClassOf :VideoSurveillance .
+
+
+###  http://www.synaptik.tech/smart_building#CO2Monitoring
+:CO2Monitoring rdf:type owl:Class ;
+               rdfs:subClassOf :AirQualityRegulation .
+
+
+###  http://www.synaptik.tech/smart_building#Capacity
+:Capacity rdf:type owl:Class ;
+          rdfs:subClassOf :SmartBuildingConcept ;
+          rdfs:comment "Capacités permettant d'atteindre les attendus." .
+
+
+###  http://www.synaptik.tech/smart_building#CarbonFootprintMonitoring
+:CarbonFootprintMonitoring rdf:type owl:Class ;
+                           rdfs:subClassOf :SustainabilityCapacity ;
+                           rdfs:comment "Surveillance de l'empreinte carbone." .
+
+
+###  http://www.synaptik.tech/smart_building#CarbonReduction
+:CarbonReduction rdf:type owl:Class ;
+                 rdfs:subClassOf :CarbonFootprintMonitoring .
+
+
+###  http://www.synaptik.tech/smart_building#CertificationScheme
+:CertificationScheme rdf:type owl:Class ;
+                     rdfs:subClassOf :Expectation ;
+                     rdfs:comment "Schémas de certification disponibles." .
+
+
+###  http://www.synaptik.tech/smart_building#CircadianLighting
+:CircadianLighting rdf:type owl:Class ;
+                   rdfs:subClassOf :LightingRegulation .
+
+
+###  http://www.synaptik.tech/smart_building#CirculationSpace
+:CirculationSpace rdf:type owl:Class ;
+                  rdfs:subClassOf :Space .
+
+
+###  http://www.synaptik.tech/smart_building#CityServicesIntegration
+:CityServicesIntegration rdf:type owl:Class ;
+                         rdfs:subClassOf :SmartCityIntegration .
+
+
+###  http://www.synaptik.tech/smart_building#ClimateControlSystem
+:ClimateControlSystem rdf:type owl:Class ;
+                      rdfs:subClassOf :EnvironmentalSystem .
+
+
+###  http://www.synaptik.tech/smart_building#ClimateScenario
+:ClimateScenario rdf:type owl:Class ;
+                 rdfs:subClassOf :UsageScenario .
+
+
+###  http://www.synaptik.tech/smart_building#CognitiveAutomationCapacity
+:CognitiveAutomationCapacity rdf:type owl:Class ;
+                             rdfs:subClassOf :Capacity ;
+                             rdfs:comment "Capacités d'automatisation basée sur l'IA." .
+
+
+###  http://www.synaptik.tech/smart_building#ComfortCapacity
+:ComfortCapacity rdf:type owl:Class ;
+                 rdfs:subClassOf :Capacity ;
+                 rdfs:comment "Capacités liées au confort des occupants." .
+
+
+###  http://www.synaptik.tech/smart_building#ComfortManagementEquipment
+:ComfortManagementEquipment rdf:type owl:Class ;
+                            rdfs:subClassOf :Equipment .
+
+
+###  http://www.synaptik.tech/smart_building#CommunicationSystem
+:CommunicationSystem rdf:type owl:Class ;
+                     rdfs:subClassOf :ITSystem .
+
+
+###  http://www.synaptik.tech/smart_building#ConferenceSystem
+:ConferenceSystem rdf:type owl:Class ;
+                  rdfs:subClassOf :AVSystem .
+
+
+###  http://www.synaptik.tech/smart_building#ConferenceSystemManagement
+:ConferenceSystemManagement rdf:type owl:Class ;
+                            rdfs:subClassOf :AVSystemCapacity ;
+                            rdfs:comment "Gestion des systèmes de conférence." .
+
+
+###  http://www.synaptik.tech/smart_building#ConsumptionAnalysis
+:ConsumptionAnalysis rdf:type owl:Class ;
+                     rdfs:subClassOf :EnergyConsumptionMonitoring .
+
+
+###  http://www.synaptik.tech/smart_building#ContentStreaming
+:ContentStreaming rdf:type owl:Class ;
+                  rdfs:subClassOf :MultimediaDistribution .
+
+
+###  http://www.synaptik.tech/smart_building#ConversationalAI
+:ConversationalAI rdf:type owl:Class ;
+                  rdfs:subClassOf :NaturalLanguageInteraction .
+
+
+###  http://www.synaptik.tech/smart_building#Corridor
+:Corridor rdf:type owl:Class ;
+          rdfs:subClassOf :CirculationSpace .
+
+
+###  http://www.synaptik.tech/smart_building#CustomNotifications
+:CustomNotifications rdf:type owl:Class ;
+                     rdfs:subClassOf :PersonalizedExperience .
+
+
+###  http://www.synaptik.tech/smart_building#CyberSecurity
+:CyberSecurity rdf:type owl:Class ;
+               rdfs:subClassOf :ITSystemCapacity ;
+               rdfs:comment "Cybersécurité." .
+
+
+###  http://www.synaptik.tech/smart_building#DataCenterSystem
+:DataCenterSystem rdf:type owl:Class ;
+                  rdfs:subClassOf :ITSystem .
+
+
+###  http://www.synaptik.tech/smart_building#DataGovernance
+:DataGovernance rdf:type owl:Class ;
+                rdfs:subClassOf :DataManagementCapacity ;
+                rdfs:comment "Gouvernance des données." .
+
+
+###  http://www.synaptik.tech/smart_building#DataLink
+:DataLink rdf:type owl:Class ;
+          rdfs:subClassOf :DigitalThread .
+
+
+###  http://www.synaptik.tech/smart_building#DataManagementCapacity
+:DataManagementCapacity rdf:type owl:Class ;
+                        rdfs:subClassOf :Capacity ;
+                        rdfs:comment "Capacités de gestion des données." .
+
+
+###  http://www.synaptik.tech/smart_building#DataPoint
+:DataPoint rdf:type owl:Class ;
+           rdfs:subClassOf :DigitalTransversalityConcept .
+
+
+###  http://www.synaptik.tech/smart_building#DataPointMetadata
+:DataPointMetadata rdf:type owl:Class ;
+                   rdfs:subClassOf :DigitalTransversalityConcept .
+
+
+###  http://www.synaptik.tech/smart_building#DataPrivacy
+:DataPrivacy rdf:type owl:Class ;
+             rdfs:subClassOf :DataGovernance .
+
+
+###  http://www.synaptik.tech/smart_building#DataQuality
+:DataQuality rdf:type owl:Class ;
+             rdfs:subClassOf :DataGovernance .
+
+
+###  http://www.synaptik.tech/smart_building#DaylightHarvesting
+:DaylightHarvesting rdf:type owl:Class ;
+                    rdfs:subClassOf :LightingRegulation .
+
+
+###  http://www.synaptik.tech/smart_building#DecisionSupport
+:DecisionSupport rdf:type owl:Class ;
+                 rdfs:subClassOf :CognitiveAutomationCapacity ;
+                 rdfs:comment "Support à la décision intelligent." .
+
+
+###  http://www.synaptik.tech/smart_building#DemandControl
+:DemandControl rdf:type owl:Class ;
+               rdfs:subClassOf :EnergyOptimization .
+
+
+###  http://www.synaptik.tech/smart_building#DigitalConnectivity
+:DigitalConnectivity rdf:type owl:Class ;
+                     rdfs:subClassOf :ExpectationCategory ;
+                     rdfs:comment "Connectivité numérique (WiredScore)." .
+
+
+###  http://www.synaptik.tech/smart_building#DigitalContinuity
+:DigitalContinuity rdf:type owl:Class ;
+                   rdfs:subClassOf :DigitalTransversalityConcept ;
+                   rdfs:comment "Represents continuous digital thread across lifecycle" .
+
+
+###  http://www.synaptik.tech/smart_building#DigitalThread
+:DigitalThread rdf:type owl:Class ;
+               rdfs:subClassOf :DigitalTransversalityConcept ;
+               rdfs:comment "Digital connections between model and reality" .
+
+
+###  http://www.synaptik.tech/smart_building#DigitalTransversalityConcept
+:DigitalTransversalityConcept rdf:type owl:Class ;
+                              rdfs:subClassOf :SmartBuildingConcept ;
+                              rdfs:comment "Core concepts for digital thread and transversality" .
+
+
+###  http://www.synaptik.tech/smart_building#DigitalTransversalityManager
+:DigitalTransversalityManager rdf:type owl:Class ;
+                              rdfs:subClassOf :DigitalTransversalityConcept ;
+                              rdfs:comment "Role managing digital transversality" .
+
+
+###  http://www.synaptik.tech/smart_building#DigitalTwinSystem
+:DigitalTwinSystem rdf:type owl:Class ;
+                   rdfs:subClassOf :AdvancedSystem .
+
+
+###  http://www.synaptik.tech/smart_building#DisplayManagement
+:DisplayManagement rdf:type owl:Class ;
+                   rdfs:subClassOf :VideoSystemManagement .
+
+
+###  http://www.synaptik.tech/smart_building#ElevatorSystem
+:ElevatorSystem rdf:type owl:Class ;
+                rdfs:subClassOf :SpecializedSystem .
+
+
+###  http://www.synaptik.tech/smart_building#EmergencyManagementEquipment
+:EmergencyManagementEquipment rdf:type owl:Class ;
+                              rdfs:subClassOf :Equipment .
+
+
+###  http://www.synaptik.tech/smart_building#EmergencyPeriod
+:EmergencyPeriod rdf:type owl:Class ;
+                 rdfs:subClassOf :ExtendedTimeContext .
+
+
+###  http://www.synaptik.tech/smart_building#EmissionsTracking
+:EmissionsTracking rdf:type owl:Class ;
+                   rdfs:subClassOf :CarbonFootprintMonitoring .
+
+
+###  http://www.synaptik.tech/smart_building#EnergyCapacity
+:EnergyCapacity rdf:type owl:Class ;
+                rdfs:subClassOf :Capacity ;
+                rdfs:comment "Capacités liées à l'énergie." .
+
+
+###  http://www.synaptik.tech/smart_building#EnergyConsumptionMonitoring
+:EnergyConsumptionMonitoring rdf:type owl:Class ;
+                             rdfs:subClassOf :EnergyCapacity ;
+                             rdfs:comment "Surveillance de la consommation énergétique." .
+
+
+###  http://www.synaptik.tech/smart_building#EnergyEfficiency
+:EnergyEfficiency rdf:type owl:Class ;
+                  rdfs:subClassOf :Sustainability ;
+                  rdfs:comment "Efficacité énergétique (BREEAM, NABERS)." .
+
+
+###  http://www.synaptik.tech/smart_building#EnergyEquipment
+:EnergyEquipment rdf:type owl:Class ;
+                 rdfs:subClassOf :Equipment .
+
+
+###  http://www.synaptik.tech/smart_building#EnergyMetering
+:EnergyMetering rdf:type owl:Class ;
+                rdfs:subClassOf :EnergyConsumptionMonitoring .
+
+
+###  http://www.synaptik.tech/smart_building#EnergyOptimization
+:EnergyOptimization rdf:type owl:Class ;
+                    rdfs:subClassOf :EnergyCapacity ;
+                    rdfs:comment "Optimisation de l'utilisation de l'énergie." .
+
+
+###  http://www.synaptik.tech/smart_building#EnergyPerformance
+:EnergyPerformance rdf:type owl:Class ;
+                   rdfs:subClassOf :ExpectationCategory ;
+                   rdfs:comment "Performance énergétique (SRI)." .
+
+
+###  http://www.synaptik.tech/smart_building#EnvironmentalCharacteristic
+:EnvironmentalCharacteristic rdf:type owl:Class ;
+                             rdfs:subClassOf :Space .
+
+
+###  http://www.synaptik.tech/smart_building#EnvironmentalMetric
+:EnvironmentalMetric rdf:type owl:Class ;
+                     rdfs:subClassOf :SpatialMetric .
+
+
+###  http://www.synaptik.tech/smart_building#EnvironmentalMonitoringEquipment
+:EnvironmentalMonitoringEquipment rdf:type owl:Class ;
+                                  rdfs:subClassOf :Equipment .
+
+
+###  http://www.synaptik.tech/smart_building#EnvironmentalSystem
+:EnvironmentalSystem rdf:type owl:Class ;
+                     rdfs:subClassOf :System ;
+                     rdfs:comment "Systèmes de gestion environnementale." .
+
+
+###  http://www.synaptik.tech/smart_building#Equipment
+:Equipment rdf:type owl:Class ;
+           rdfs:subClassOf :SmartBuildingConcept ;
+           rdfs:comment "Équipements composant les systèmes." ,
+                        "Équipements du bâtiment intelligent." .
+
+
+###  http://www.synaptik.tech/smart_building#EquipmentMonitoring
+:EquipmentMonitoring rdf:type owl:Class ;
+                     rdfs:subClassOf :PredictiveMaintenance .
+
+
+###  http://www.synaptik.tech/smart_building#EquipmentReservation
+:EquipmentReservation rdf:type owl:Class ;
+                      rdfs:subClassOf :ReservationServices .
+
+
+###  http://www.synaptik.tech/smart_building#Expectation
+:Expectation rdf:type owl:Class ;
+             rdfs:subClassOf :SmartBuildingConcept ;
+             rdfs:comment "Attendus et objectifs du bâtiment intelligent." .
+
+
+###  http://www.synaptik.tech/smart_building#ExpectationCategory
+:ExpectationCategory rdf:type owl:Class ;
+                     rdfs:subClassOf :Expectation ;
+                     rdfs:comment "Catégories d'attendus selon les référentiels." .
+
+
+###  http://www.synaptik.tech/smart_building#ExtendedAccessUser
+:ExtendedAccessUser rdf:type owl:Class ;
+                    rdfs:subClassOf :User .
+
+
+###  http://www.synaptik.tech/smart_building#ExtendedTimeContext
+:ExtendedTimeContext rdf:type owl:Class ;
+                     rdfs:subClassOf :TimeContext .
+
+
+###  http://www.synaptik.tech/smart_building#ExteriorLightingSystem
+:ExteriorLightingSystem rdf:type owl:Class ;
+                        rdfs:subClassOf :LightingSystem .
+
+
+###  http://www.synaptik.tech/smart_building#ExternalIntegrationCapacity
+:ExternalIntegrationCapacity rdf:type owl:Class ;
+                             rdfs:subClassOf :Capacity ;
+                             rdfs:comment "Capacités d'intégration avec les systèmes externes." .
+
+
+###  http://www.synaptik.tech/smart_building#FailurePrediction
+:FailurePrediction rdf:type owl:Class ;
+                   rdfs:subClassOf :PredictiveMaintenance .
+
+
+###  http://www.synaptik.tech/smart_building#FireDetection
+:FireDetection rdf:type owl:Class ;
+               rdfs:subClassOf :FireSafety .
+
+
+###  http://www.synaptik.tech/smart_building#FireSafety
+:FireSafety rdf:type owl:Class ;
+            rdfs:subClassOf :SecurityCapacity ;
+            rdfs:comment "Sécurité incendie." .
+
+
+###  http://www.synaptik.tech/smart_building#Floor
+:Floor rdf:type owl:Class ;
+       rdfs:subClassOf :Space .
+
+
+###  http://www.synaptik.tech/smart_building#FullyImplemented
+:FullyImplemented rdf:type owl:Class ;
+                  rdfs:subClassOf :ImplementationLevel .
+
+
+###  http://www.synaptik.tech/smart_building#GestureRecognition
+:GestureRecognition rdf:type owl:Class ;
+                    rdfs:subClassOf :MultimodalInteractionCapacity ;
+                    rdfs:comment "Reconnaissance des gestes." .
+
+
+###  http://www.synaptik.tech/smart_building#GridFlexibility
+:GridFlexibility rdf:type owl:Class ;
+                 rdfs:subClassOf :ExpectationCategory ;
+                 rdfs:comment "Flexibilité réseau (SRI)." .
+
+
+###  http://www.synaptik.tech/smart_building#HVACDistributionSystem
+:HVACDistributionSystem rdf:type owl:Class ;
+                        rdfs:subClassOf :HVACSystem .
+
+
+###  http://www.synaptik.tech/smart_building#HVACEquipment
+:HVACEquipment rdf:type owl:Class ;
+               rdfs:subClassOf :OTEquipment .
+
+
+###  http://www.synaptik.tech/smart_building#HVACProductionSystem
+:HVACProductionSystem rdf:type owl:Class ;
+                      rdfs:subClassOf :HVACSystem .
+
+
+###  http://www.synaptik.tech/smart_building#HVACSystem
+:HVACSystem rdf:type owl:Class ;
+            rdfs:subClassOf :OTSystem ;
+            rdfs:comment "Système HVAC." .
+
+
+###  http://www.synaptik.tech/smart_building#HandGesture
+:HandGesture rdf:type owl:Class ;
+             rdfs:subClassOf :GestureRecognition .
+
+
+###  http://www.synaptik.tech/smart_building#ITEquipment
+:ITEquipment rdf:type owl:Class ;
+             rdfs:subClassOf :Equipment .
+
+
+###  http://www.synaptik.tech/smart_building#ITSystem
+:ITSystem rdf:type owl:Class ;
+          rdfs:subClassOf :System ;
+          rdfs:comment "Systèmes informatiques." .
+
+
+###  http://www.synaptik.tech/smart_building#ITSystemCapacity
+:ITSystemCapacity rdf:type owl:Class ;
+                  rdfs:subClassOf :Capacity ;
+                  rdfs:comment "Capacités liées aux systèmes IT." .
+
+
+###  http://www.synaptik.tech/smart_building#ImplementationLevel
+:ImplementationLevel rdf:type owl:Class ;
+                     rdfs:subClassOf :SmartBuildingConcept .
+
+
+###  http://www.synaptik.tech/smart_building#InactiveUser
+:InactiveUser rdf:type owl:Class ;
+              rdfs:subClassOf :User .
+
+
+###  http://www.synaptik.tech/smart_building#IndividualTemperatureControl
+:IndividualTemperatureControl rdf:type owl:Class ;
+                              rdfs:subClassOf :TemperatureRegulation .
+
+
+###  http://www.synaptik.tech/smart_building#IndoorAirQuality
+:IndoorAirQuality rdf:type owl:Class ;
+                  rdfs:subClassOf :AirQualityMonitoring .
+
+
+###  http://www.synaptik.tech/smart_building#IndoorEnvironment
+:IndoorEnvironment rdf:type owl:Class ;
+                   rdfs:subClassOf :UserExperience ;
+                   rdfs:comment "Qualité de l'environnement intérieur." .
+
+
+###  http://www.synaptik.tech/smart_building#IndoorNavigation
+:IndoorNavigation rdf:type owl:Class ;
+                  rdfs:subClassOf :WayfindingService .
+
+
+###  http://www.synaptik.tech/smart_building#IntegrableElement
+:IntegrableElement rdf:type owl:Class ;
+                   rdfs:subClassOf :SmartBuildingConcept .
+
+
+###  http://www.synaptik.tech/smart_building#IntegrationSystem
+:IntegrationSystem rdf:type owl:Class ;
+                   rdfs:subClassOf :System ;
+                   rdfs:comment "Systèmes d'intégration." .
+
+
+###  http://www.synaptik.tech/smart_building#InteriorLightingSystem
+:InteriorLightingSystem rdf:type owl:Class ;
+                        rdfs:subClassOf :LightingSystem .
+
+
+###  http://www.synaptik.tech/smart_building#InventoryManagement
+:InventoryManagement rdf:type owl:Class ;
+                     rdfs:subClassOf :AssetTracking .
+
+
+###  http://www.synaptik.tech/smart_building#IoTEquipment
+:IoTEquipment rdf:type owl:Class ;
+              rdfs:subClassOf :Equipment .
+
+
+###  http://www.synaptik.tech/smart_building#IoTSystem
+:IoTSystem rdf:type owl:Class ;
+           rdfs:subClassOf :IntegrationSystem .
+
+
+###  http://www.synaptik.tech/smart_building#LayoutOptimization
+:LayoutOptimization rdf:type owl:Class ;
+                    rdfs:subClassOf :SpaceOptimization .
+
+
+###  http://www.synaptik.tech/smart_building#LeakDetection
+:LeakDetection rdf:type owl:Class ;
+               rdfs:subClassOf :WaterManagement .
+
+
+###  http://www.synaptik.tech/smart_building#LearningAdaptationCapacity
+:LearningAdaptationCapacity rdf:type owl:Class ;
+                            rdfs:subClassOf :Capacity ;
+                            rdfs:comment "Capacités d'apprentissage et d'adaptation." .
+
+
+###  http://www.synaptik.tech/smart_building#LightingEquipment
+:LightingEquipment rdf:type owl:Class ;
+                   rdfs:subClassOf :OTEquipment .
+
+
+###  http://www.synaptik.tech/smart_building#LightingRegulation
+:LightingRegulation rdf:type owl:Class ;
+                    rdfs:subClassOf :ComfortCapacity ;
+                    rdfs:comment "Régulation de l'éclairage." .
+
+
+###  http://www.synaptik.tech/smart_building#LightingScenario
+:LightingScenario rdf:type owl:Class ;
+                  rdfs:subClassOf :UsageScenario .
+
+
+###  http://www.synaptik.tech/smart_building#LightingSystem
+:LightingSystem rdf:type owl:Class ;
+                rdfs:subClassOf :OTSystem ;
+                rdfs:comment "Système d'éclairage." .
+
+
+###  http://www.synaptik.tech/smart_building#LocationBasedServices
+:LocationBasedServices rdf:type owl:Class ;
+                       rdfs:subClassOf :WayfindingService .
+
+
+###  http://www.synaptik.tech/smart_building#MachineLearning
+:MachineLearning rdf:type owl:Class ;
+                 rdfs:subClassOf :AdvancedAnalytics .
+
+
+###  http://www.synaptik.tech/smart_building#MaintenanceGuidance
+:MaintenanceGuidance rdf:type owl:Class ;
+                     rdfs:subClassOf :AugmentedReality .
+
+
+###  http://www.synaptik.tech/smart_building#MaintenancePeriod
+:MaintenancePeriod rdf:type owl:Class ;
+                   rdfs:subClassOf :ExtendedTimeContext .
+
+
+###  http://www.synaptik.tech/smart_building#MaintenanceScheduling
+:MaintenanceScheduling rdf:type owl:Class ;
+                       rdfs:subClassOf :PredictiveMaintenance .
+
+
+###  http://www.synaptik.tech/smart_building#MaintenanceUser
+:MaintenanceUser rdf:type owl:Class ;
+                 rdfs:subClassOf :User .
+
+
+###  http://www.synaptik.tech/smart_building#ManagerUser
+:ManagerUser rdf:type owl:Class ;
+             rdfs:subClassOf :User .
+
+
+###  http://www.synaptik.tech/smart_building#MechanicalRoom
+:MechanicalRoom rdf:type owl:Class ;
+                rdfs:subClassOf :TechnicalSpace .
+
+
+###  http://www.synaptik.tech/smart_building#MediaDistributionSystem
+:MediaDistributionSystem rdf:type owl:Class ;
+                         rdfs:subClassOf :AVSystem .
+
+
+###  http://www.synaptik.tech/smart_building#MediaRouting
+:MediaRouting rdf:type owl:Class ;
+              rdfs:subClassOf :MultimediaDistribution .
+
+
+###  http://www.synaptik.tech/smart_building#MeetingRoom
+:MeetingRoom rdf:type owl:Class ;
+             rdfs:subClassOf :WorkSpace .
+
+
+###  http://www.synaptik.tech/smart_building#MobileAppAccess
+:MobileAppAccess rdf:type owl:Class ;
+                 rdfs:subClassOf :MobileIntegration .
+
+
+###  http://www.synaptik.tech/smart_building#MobileCredentials
+:MobileCredentials rdf:type owl:Class ;
+                   rdfs:subClassOf :MobileIntegration .
+
+
+###  http://www.synaptik.tech/smart_building#MobileIntegration
+:MobileIntegration rdf:type owl:Class ;
+                   rdfs:subClassOf :UserExperienceCapacity ;
+                   rdfs:comment "Intégration des appareils mobiles." .
+
+
+###  http://www.synaptik.tech/smart_building#MultimediaDistribution
+:MultimediaDistribution rdf:type owl:Class ;
+                        rdfs:subClassOf :AVSystemCapacity ;
+                        rdfs:comment "Gestion de la diffusion multimédia." .
+
+
+###  http://www.synaptik.tech/smart_building#MultimodalInteractionCapacity
+:MultimodalInteractionCapacity rdf:type owl:Class ;
+                               rdfs:subClassOf :Capacity ;
+                               rdfs:comment "Capacités d'interaction multimodale avancée." .
+
+
+###  http://www.synaptik.tech/smart_building#NABERS
+:NABERS rdf:type owl:Class ;
+        rdfs:subClassOf :CertificationScheme ;
+        rdfs:comment "Certification NABERS." .
+
+
+###  http://www.synaptik.tech/smart_building#NaturalLanguageInteraction
+:NaturalLanguageInteraction rdf:type owl:Class ;
+                            rdfs:subClassOf :MultimodalInteractionCapacity ;
+                            rdfs:comment "Interaction en langage naturel." .
+
+
+###  http://www.synaptik.tech/smart_building#NetworkInfrastructureManagement
+:NetworkInfrastructureManagement rdf:type owl:Class ;
+                                 rdfs:subClassOf :ITSystemCapacity ;
+                                 rdfs:comment "Gestion de l'infrastructure réseau." .
+
+
+###  http://www.synaptik.tech/smart_building#NetworkMonitoring
+:NetworkMonitoring rdf:type owl:Class ;
+                   rdfs:subClassOf :NetworkInfrastructureManagement .
+
+
+###  http://www.synaptik.tech/smart_building#NetworkSecurity
+:NetworkSecurity rdf:type owl:Class ;
+                 rdfs:subClassOf :NetworkInfrastructureManagement .
+
+
+###  http://www.synaptik.tech/smart_building#NetworkSystem
+:NetworkSystem rdf:type owl:Class ;
+               rdfs:subClassOf :ITSystem .
+
+
+###  http://www.synaptik.tech/smart_building#NightMode
+:NightMode rdf:type owl:Class ;
+           rdfs:subClassOf :TimeContext .
+
+
+###  http://www.synaptik.tech/smart_building#OTEquipment
+:OTEquipment rdf:type owl:Class ;
+             rdfs:subClassOf :Equipment .
+
+
+###  http://www.synaptik.tech/smart_building#OTSystem
+:OTSystem rdf:type owl:Class ;
+          rdfs:subClassOf :System ;
+          rdfs:comment "Systèmes opérationnels du bâtiment." .
+
+
+###  http://www.synaptik.tech/smart_building#OccupancyAnalytics
+:OccupancyAnalytics rdf:type owl:Class ;
+                    rdfs:subClassOf :OccupancyTracking .
+
+
+###  http://www.synaptik.tech/smart_building#OccupancyBasedLighting
+:OccupancyBasedLighting rdf:type owl:Class ;
+                        rdfs:subClassOf :LightingRegulation .
+
+
+###  http://www.synaptik.tech/smart_building#OccupancyMetric
+:OccupancyMetric rdf:type owl:Class ;
+                 rdfs:subClassOf :SpatialMetric .
+
+
+###  http://www.synaptik.tech/smart_building#OccupancyTracking
+:OccupancyTracking rdf:type owl:Class ;
+                   rdfs:subClassOf :BuildingManagementCapacity ;
+                   rdfs:comment "Suivi de l'occupation." .
+
+
+###  http://www.synaptik.tech/smart_building#Office
+:Office rdf:type owl:Class ;
+        rdfs:subClassOf :WorkSpace .
+
+
+###  http://www.synaptik.tech/smart_building#OperationalDataAnalysis
+:OperationalDataAnalysis rdf:type owl:Class ;
+                         rdfs:subClassOf :DecisionSupport .
+
+
+###  http://www.synaptik.tech/smart_building#OperationalPeriod
+:OperationalPeriod rdf:type owl:Class ;
+                   rdfs:subClassOf :ExtendedTimeContext .
+
+
+###  http://www.synaptik.tech/smart_building#OperatorUser
+:OperatorUser rdf:type owl:Class ;
+              rdfs:subClassOf :User .
+
+
+###  http://www.synaptik.tech/smart_building#OutdoorAirQuality
+:OutdoorAirQuality rdf:type owl:Class ;
+                   rdfs:subClassOf :AirQualityMonitoring .
+
+
+###  http://www.synaptik.tech/smart_building#ParkingSystem
+:ParkingSystem rdf:type owl:Class ;
+               rdfs:subClassOf :SpecializedSystem .
+
+
+###  http://www.synaptik.tech/smart_building#PartiallyImplemented
+:PartiallyImplemented rdf:type owl:Class ;
+                      rdfs:subClassOf :ImplementationLevel .
+
+
+###  http://www.synaptik.tech/smart_building#PatternLearning
+:PatternLearning rdf:type owl:Class ;
+                 rdfs:subClassOf :LearningAdaptationCapacity ;
+                 rdfs:comment "Apprentissage des motifs." .
+
+
+###  http://www.synaptik.tech/smart_building#PeakLoadManagement
+:PeakLoadManagement rdf:type owl:Class ;
+                    rdfs:subClassOf :EnergyOptimization .
+
+
+###  http://www.synaptik.tech/smart_building#PersonalizedEnvironment
+:PersonalizedEnvironment rdf:type owl:Class ;
+                         rdfs:subClassOf :PersonalizedExperience .
+
+
+###  http://www.synaptik.tech/smart_building#PersonalizedExperience
+:PersonalizedExperience rdf:type owl:Class ;
+                        rdfs:subClassOf :UserExperienceCapacity ;
+                        rdfs:comment "Expérience personnalisée." .
+
+
+###  http://www.synaptik.tech/smart_building#PhysicalAccessControl
+:PhysicalAccessControl rdf:type owl:Class ;
+                       rdfs:subClassOf :AccessControl .
+
+
+###  http://www.synaptik.tech/smart_building#PlannedImplementation
+:PlannedImplementation rdf:type owl:Class ;
+                       rdfs:subClassOf :ImplementationLevel .
+
+
+###  http://www.synaptik.tech/smart_building#PredictiveAnalytics
+:PredictiveAnalytics rdf:type owl:Class ;
+                     rdfs:subClassOf :AdvancedAnalytics .
+
+
+###  http://www.synaptik.tech/smart_building#PredictiveMaintenance
+:PredictiveMaintenance rdf:type owl:Class ;
+                       rdfs:subClassOf :BuildingManagementCapacity ;
+                       rdfs:comment "Maintenance prédictive." .
+
+
+###  http://www.synaptik.tech/smart_building#PresentationSystem
+:PresentationSystem rdf:type owl:Class ;
+                    rdfs:subClassOf :AVSystem .
+
+
+###  http://www.synaptik.tech/smart_building#RealTimeMonitoring
+:RealTimeMonitoring rdf:type owl:Class ;
+                    rdfs:subClassOf :EnergyConsumptionMonitoring .
+
+
+###  http://www.synaptik.tech/smart_building#RealTimeOccupancy
+:RealTimeOccupancy rdf:type owl:Class ;
+                   rdfs:subClassOf :OccupancyTracking .
+
+
+###  http://www.synaptik.tech/smart_building#RecyclingManagement
+:RecyclingManagement rdf:type owl:Class ;
+                     rdfs:subClassOf :WasteManagement .
+
+
+###  http://www.synaptik.tech/smart_building#RegularUser
+:RegularUser rdf:type owl:Class ;
+             rdfs:subClassOf :User .
+
+
+###  http://www.synaptik.tech/smart_building#ReservationServices
+:ReservationServices rdf:type owl:Class ;
+                     rdfs:subClassOf :UserExperienceCapacity ;
+                     rdfs:comment "Services de réservation." .
+
+
+###  http://www.synaptik.tech/smart_building#ResilienceCapacity
+:ResilienceCapacity rdf:type owl:Class ;
+                    rdfs:subClassOf :Capacity ;
+                    rdfs:comment "Capacités de résilience et continuité." .
+
+
+###  http://www.synaptik.tech/smart_building#ResourceAllocation
+:ResourceAllocation rdf:type owl:Class ;
+                    rdfs:subClassOf :AutomatedOrchestration .
+
+
+###  http://www.synaptik.tech/smart_building#Room
+:Room rdf:type owl:Class ;
+      rdfs:subClassOf :Space .
+
+
+###  http://www.synaptik.tech/smart_building#RoomBooking
+:RoomBooking rdf:type owl:Class ;
+             rdfs:subClassOf :ReservationServices .
+
+
+###  http://www.synaptik.tech/smart_building#SRI
+:SRI rdf:type owl:Class ;
+     rdfs:subClassOf :CertificationScheme ;
+     rdfs:comment "Smart Readiness Indicator." .
+
+
+###  http://www.synaptik.tech/smart_building#Schedule
+:Schedule rdf:type owl:Class ;
+          rdfs:subClassOf :SmartBuildingConcept .
+
+
+###  http://www.synaptik.tech/smart_building#SecurityCapacity
+:SecurityCapacity rdf:type owl:Class ;
+                  rdfs:subClassOf :Capacity ;
+                  rdfs:comment "Capacités liées à la sécurité." .
+
+
+###  http://www.synaptik.tech/smart_building#SecurityEquipment
+:SecurityEquipment rdf:type owl:Class ;
+                   rdfs:subClassOf :OTEquipment .
+
+
+###  http://www.synaptik.tech/smart_building#SecurityMonitoring
+:SecurityMonitoring rdf:type owl:Class ;
+                    rdfs:subClassOf :CyberSecurity .
+
+
+###  http://www.synaptik.tech/smart_building#ServerAdministration
+:ServerAdministration rdf:type owl:Class ;
+                      rdfs:subClassOf :ServerStorageManagement .
+
+
+###  http://www.synaptik.tech/smart_building#ServerRoom
+:ServerRoom rdf:type owl:Class ;
+            rdfs:subClassOf :TechnicalSpace .
+
+
+###  http://www.synaptik.tech/smart_building#ServerStorageManagement
+:ServerStorageManagement rdf:type owl:Class ;
+                         rdfs:subClassOf :ITSystemCapacity ;
+                         rdfs:comment "Gestion des serveurs et du stockage." .
+
+
+###  http://www.synaptik.tech/smart_building#Site
+:Site rdf:type owl:Class ;
+      rdfs:subClassOf :Space .
+
+
+###  http://www.synaptik.tech/smart_building#SmartBuildingConcept
+:SmartBuildingConcept rdf:type owl:Class ;
+                      rdfs:comment "Concept racine pour tous les éléments du bâtiment intelligent." .
+
+
+###  http://www.synaptik.tech/smart_building#SmartCityIntegration
+:SmartCityIntegration rdf:type owl:Class ;
+                      rdfs:subClassOf :ExternalIntegrationCapacity ;
+                      rdfs:comment "Intégration avec les systèmes de ville intelligente." .
+
+
+###  http://www.synaptik.tech/smart_building#SmartScore
+:SmartScore rdf:type owl:Class ;
+            rdfs:subClassOf :CertificationScheme ;
+            rdfs:comment "Certification SmartScore." .
+
+
+###  http://www.synaptik.tech/smart_building#SmokeDetection
+:SmokeDetection rdf:type owl:Class ;
+                rdfs:subClassOf :FireSafety .
+
+
+###  http://www.synaptik.tech/smart_building#SoundSystemControl
+:SoundSystemControl rdf:type owl:Class ;
+                    rdfs:subClassOf :AudioSystemManagement .
+
+
+###  http://www.synaptik.tech/smart_building#Space
+:Space rdf:type owl:Class ;
+       rdfs:subClassOf :SmartBuildingConcept ;
+       rdfs:comment "Espaces et dimensions spatiales du bâtiment intelligent." ,
+                    "Espaces et dimensions spatiales." .
+
+
+###  http://www.synaptik.tech/smart_building#SpaceManagementEquipment
+:SpaceManagementEquipment rdf:type owl:Class ;
+                          rdfs:subClassOf :Equipment .
+
+
+###  http://www.synaptik.tech/smart_building#SpaceOptimization
+:SpaceOptimization rdf:type owl:Class ;
+                   rdfs:subClassOf :BuildingManagementCapacity ;
+                   rdfs:comment "Optimisation des espaces." .
+
+
+###  http://www.synaptik.tech/smart_building#SpaceUtilization
+:SpaceUtilization rdf:type owl:Class ;
+                  rdfs:subClassOf :SpaceOptimization .
+
+
+###  http://www.synaptik.tech/smart_building#SpatialMetric
+:SpatialMetric rdf:type owl:Class ;
+               rdfs:subClassOf :Space .
+
+
+###  http://www.synaptik.tech/smart_building#SpatialOverlay
+:SpatialOverlay rdf:type owl:Class ;
+                rdfs:subClassOf :AugmentedReality .
+
+
+###  http://www.synaptik.tech/smart_building#SpecializedEquipment
+:SpecializedEquipment rdf:type owl:Class ;
+                      rdfs:subClassOf :Equipment .
+
+
+###  http://www.synaptik.tech/smart_building#SpecializedSystem
+:SpecializedSystem rdf:type owl:Class ;
+                   rdfs:subClassOf :System ;
+                   rdfs:comment "Systèmes spécialisés." .
+
+
+###  http://www.synaptik.tech/smart_building#Stairway
+:Stairway rdf:type owl:Class ;
+          rdfs:subClassOf :CirculationSpace .
+
+
+###  http://www.synaptik.tech/smart_building#Stakeholder
+:Stakeholder rdf:type owl:Class ;
+             rdfs:subClassOf :SmartBuildingConcept .
+
+
+###  http://www.synaptik.tech/smart_building#StorageOptimization
+:StorageOptimization rdf:type owl:Class ;
+                     rdfs:subClassOf :ServerStorageManagement .
+
+
+###  http://www.synaptik.tech/smart_building#Sustainability
+:Sustainability rdf:type owl:Class ;
+                rdfs:subClassOf :ExpectationCategory ;
+                rdfs:comment "Durabilité (SmartScore, BREEAM, NABERS)." .
+
+
+###  http://www.synaptik.tech/smart_building#SustainabilityCapacity
+:SustainabilityCapacity rdf:type owl:Class ;
+                        rdfs:subClassOf :Capacity ;
+                        rdfs:comment "Capacités liées à la durabilité." .
+
+
+###  http://www.synaptik.tech/smart_building#SynchronizationStatus
+:SynchronizationStatus rdf:type owl:Class ;
+                       rdfs:subClassOf :DigitalTransversalityConcept .
+
+
+###  http://www.synaptik.tech/smart_building#System
+:System rdf:type owl:Class ;
+        rdfs:subClassOf :SmartBuildingConcept ;
+        rdfs:comment "Classe racine pour tous les systèmes." ,
+                     "Systèmes implémentant les capacités." .
+
+
+###  http://www.synaptik.tech/smart_building#SystemCoordination
+:SystemCoordination rdf:type owl:Class ;
+                    rdfs:subClassOf :AutomatedOrchestration .
+
+
+###  http://www.synaptik.tech/smart_building#SystemResilience
+:SystemResilience rdf:type owl:Class ;
+                  rdfs:subClassOf :ResilienceCapacity ;
+                  rdfs:comment "Résilience des systèmes." .
+
+
+###  http://www.synaptik.tech/smart_building#SystemState
+:SystemState rdf:type owl:Class ;
+             rdfs:subClassOf :EnvironmentalSystem .
+
+
+###  http://www.synaptik.tech/smart_building#TaskBasedLighting
+:TaskBasedLighting rdf:type owl:Class ;
+                   rdfs:subClassOf :LightingRegulation .
+
+
+###  http://www.synaptik.tech/smart_building#TechnicalResilience
+:TechnicalResilience rdf:type owl:Class ;
+                     rdfs:subClassOf :ExpectationCategory ;
+                     rdfs:comment "Résilience technique (WiredScore)." .
+
+
+###  http://www.synaptik.tech/smart_building#TechnicalSpace
+:TechnicalSpace rdf:type owl:Class ;
+                rdfs:subClassOf :Space .
+
+
+###  http://www.synaptik.tech/smart_building#TechnicalUser
+:TechnicalUser rdf:type owl:Class ;
+               rdfs:subClassOf :User .
+
+
+###  http://www.synaptik.tech/smart_building#TechnologyFoundation
+:TechnologyFoundation rdf:type owl:Class ;
+                      rdfs:subClassOf :ExpectationCategory ;
+                      rdfs:comment "Fondation technologique (SmartScore, WiredScore)." .
+
+
+###  http://www.synaptik.tech/smart_building#TemperatureRegulation
+:TemperatureRegulation rdf:type owl:Class ;
+                       rdfs:subClassOf :ComfortCapacity ;
+                       rdfs:comment "Régulation de la température." .
+
+
+###  http://www.synaptik.tech/smart_building#TemperatureScheduling
+:TemperatureScheduling rdf:type owl:Class ;
+                       rdfs:subClassOf :TemperatureRegulation .
+
+
+###  http://www.synaptik.tech/smart_building#TextualInteraction
+:TextualInteraction rdf:type owl:Class ;
+                    rdfs:subClassOf :NaturalLanguageInteraction .
+
+
+###  http://www.synaptik.tech/smart_building#ThreatProtection
+:ThreatProtection rdf:type owl:Class ;
+                  rdfs:subClassOf :CyberSecurity .
+
+
+###  http://www.synaptik.tech/smart_building#TimeContext
+:TimeContext rdf:type owl:Class ;
+             rdfs:subClassOf :SmartBuildingConcept .
+
+
+###  http://www.synaptik.tech/smart_building#TrendAnalysis
+:TrendAnalysis rdf:type owl:Class ;
+               rdfs:subClassOf :DecisionSupport .
+
+
+###  http://www.synaptik.tech/smart_building#UrbanMobilityIntegration
+:UrbanMobilityIntegration rdf:type owl:Class ;
+                          rdfs:subClassOf :SmartCityIntegration .
+
+
+###  http://www.synaptik.tech/smart_building#UsagePatternDetection
+:UsagePatternDetection rdf:type owl:Class ;
+                       rdfs:subClassOf :PatternLearning .
+
+
+###  http://www.synaptik.tech/smart_building#UsageScenario
+:UsageScenario rdf:type owl:Class ;
+               rdfs:subClassOf :SmartBuildingConcept ;
+               rdfs:comment "Usage scenarios for system configurations." .
+
+
+###  http://www.synaptik.tech/smart_building#User
+:User rdf:type owl:Class ;
+      rdfs:subClassOf :SmartBuildingConcept ;
+      rdfs:comment "Classe racine pour tous les utilisateurs." ,
+                   "Utilisateurs et rôles." .
+
+
+###  http://www.synaptik.tech/smart_building#UserEngagement
+:UserEngagement rdf:type owl:Class ;
+                rdfs:subClassOf :UserExperience ;
+                rdfs:comment "Engagement utilisateur via applications mobiles et portails." .
+
+
+###  http://www.synaptik.tech/smart_building#UserExperience
+:UserExperience rdf:type owl:Class ;
+                rdfs:subClassOf :ExpectationCategory ;
+                rdfs:comment "Expérience utilisateur (SmartScore)." .
+
+
+###  http://www.synaptik.tech/smart_building#UserExperienceCapacity
+:UserExperienceCapacity rdf:type owl:Class ;
+                        rdfs:subClassOf :Capacity ;
+                        rdfs:comment "Capacités liées à l'expérience utilisateur." .
+
+
+###  http://www.synaptik.tech/smart_building#UserGroup
+:UserGroup rdf:type owl:Class ;
+           rdfs:subClassOf :User .
+
+
+###  http://www.synaptik.tech/smart_building#UserPreferenceManagement
+:UserPreferenceManagement rdf:type owl:Class ;
+                          rdfs:subClassOf :PersonalizedExperience .
+
+
+###  http://www.synaptik.tech/smart_building#UserPrivilege
+:UserPrivilege rdf:type owl:Class ;
+               rdfs:subClassOf :User .
+
+
+###  http://www.synaptik.tech/smart_building#UserRight
+:UserRight rdf:type owl:Class ;
+           rdfs:subClassOf :User .
+
+
+###  http://www.synaptik.tech/smart_building#VOCControl
+:VOCControl rdf:type owl:Class ;
+            rdfs:subClassOf :AirQualityRegulation .
+
+
+###  http://www.synaptik.tech/smart_building#VentilationControl
+:VentilationControl rdf:type owl:Class ;
+                    rdfs:subClassOf :AirQualityRegulation .
+
+
+###  http://www.synaptik.tech/smart_building#VerticalTransportEquipment
+:VerticalTransportEquipment rdf:type owl:Class ;
+                            rdfs:subClassOf :Equipment .
+
+
+###  http://www.synaptik.tech/smart_building#VideoAnalytics
+:VideoAnalytics rdf:type owl:Class ;
+                rdfs:subClassOf :VideoSurveillance .
+
+
+###  http://www.synaptik.tech/smart_building#VideoConferencing
+:VideoConferencing rdf:type owl:Class ;
+                   rdfs:subClassOf :ConferenceSystemManagement .
+
+
+###  http://www.synaptik.tech/smart_building#VideoSurveillance
+:VideoSurveillance rdf:type owl:Class ;
+                   rdfs:subClassOf :SecurityCapacity ;
+                   rdfs:comment "Surveillance par vidéo." .
+
+
+###  http://www.synaptik.tech/smart_building#VideoSystemManagement
+:VideoSystemManagement rdf:type owl:Class ;
+                       rdfs:subClassOf :AVSystemCapacity ;
+                       rdfs:comment "Gestion des systèmes vidéo." .
+
+
+###  http://www.synaptik.tech/smart_building#VideoWallControl
+:VideoWallControl rdf:type owl:Class ;
+                  rdfs:subClassOf :VideoSystemManagement .
+
+
+###  http://www.synaptik.tech/smart_building#VoiceControl
+:VoiceControl rdf:type owl:Class ;
+              rdfs:subClassOf :NaturalLanguageInteraction .
+
+
+###  http://www.synaptik.tech/smart_building#WasteManagement
+:WasteManagement rdf:type owl:Class ;
+                 rdfs:subClassOf :Sustainability ,
+                                 :SustainabilityCapacity ;
+                 rdfs:comment "Gestion des déchets (BREEAM)." ,
+                              "Gestion des déchets." .
+
+
+###  http://www.synaptik.tech/smart_building#WasteManagementEquipment
+:WasteManagementEquipment rdf:type owl:Class ;
+                          rdfs:subClassOf :Equipment .
+
+
+###  http://www.synaptik.tech/smart_building#WasteManagementSystem
+:WasteManagementSystem rdf:type owl:Class ;
+                       rdfs:subClassOf :EnvironmentalSystem .
+
+
+###  http://www.synaptik.tech/smart_building#WasteReduction
+:WasteReduction rdf:type owl:Class ;
+                rdfs:subClassOf :WasteManagement .
+
+
+###  http://www.synaptik.tech/smart_building#WasteTracking
+:WasteTracking rdf:type owl:Class ;
+               rdfs:subClassOf :WasteManagement .
+
+
+###  http://www.synaptik.tech/smart_building#WaterConsumptionMonitoring
+:WaterConsumptionMonitoring rdf:type owl:Class ;
+                            rdfs:subClassOf :WaterManagement .
+
+
+###  http://www.synaptik.tech/smart_building#WaterEfficiency
+:WaterEfficiency rdf:type owl:Class ;
+                 rdfs:subClassOf :Sustainability ;
+                 rdfs:comment "Gestion efficace de l'eau (BREEAM)." .
+
+
+###  http://www.synaptik.tech/smart_building#WaterManagement
+:WaterManagement rdf:type owl:Class ;
+                 rdfs:subClassOf :SustainabilityCapacity ;
+                 rdfs:comment "Gestion de l'eau." .
+
+
+###  http://www.synaptik.tech/smart_building#WaterManagementEquipment
+:WaterManagementEquipment rdf:type owl:Class ;
+                          rdfs:subClassOf :Equipment .
+
+
+###  http://www.synaptik.tech/smart_building#WaterRecycling
+:WaterRecycling rdf:type owl:Class ;
+                rdfs:subClassOf :WaterManagement .
+
+
+###  http://www.synaptik.tech/smart_building#WayfindingService
+:WayfindingService rdf:type owl:Class ;
+                   rdfs:subClassOf :UserExperienceCapacity ;
+                   rdfs:comment "Services de guidage." .
+
+
+###  http://www.synaptik.tech/smart_building#WebConferencing
+:WebConferencing rdf:type owl:Class ;
+                 rdfs:subClassOf :ConferenceSystemManagement .
+
+
+###  http://www.synaptik.tech/smart_building#WiredScore
+:WiredScore rdf:type owl:Class ;
+            rdfs:subClassOf :CertificationScheme ;
+            rdfs:comment "Certification WiredScore." .
+
+
+###  http://www.synaptik.tech/smart_building#WorkSpace
+:WorkSpace rdf:type owl:Class ;
+           rdfs:subClassOf :Space .
+
+
+###  http://www.synaptik.tech/smart_building#ZonalTemperatureControl
+:ZonalTemperatureControl rdf:type owl:Class ;
+                         rdfs:subClassOf :TemperatureRegulation .
+
+
+###  http://www.synaptik.tech/smart_building#Zone
+:Zone rdf:type owl:Class ;
+      rdfs:subClassOf :Space .
+
+
+###  http://www.w3.org/2000/01/rdf-schema#range
+rdfs:range rdf:type owl:Class ;
+           rdfs:subClassOf :SmartBuildingConcept .
+
+
+[ rdf:type rdfs:range
+] .
+
+[ rdf:type rdfs:range
+ ] .
+
+[ rdf:type rdfs:range
+ ] .
+
+[ rdf:type rdfs:range
+ ] .
+
+[ rdf:type rdfs:range
+ ] .
+
+[ rdf:type rdfs:range
+ ] .
+
+[ rdf:type rdfs:range
+ ] .
+
+[ rdf:type rdfs:range
+ ] .
+
+[ rdf:type rdfs:range
+ ] .
+
+[ rdf:type rdfs:range
+ ] .
+
+[ rdf:type rdfs:range
+ ] .
+
+[ rdf:type rdfs:range
+ ] .
+
+[ rdf:type rdfs:range
+ ] .
+
+[ rdf:type rdfs:range
+ ] .
+
+[ rdf:type rdfs:range
+ ] .
+
+[ rdf:type rdfs:range
+ ] .
+
+[ rdf:type rdfs:range
+ ] .
+
+[ rdf:type rdfs:range
+ ] .
+
+[ rdf:type rdfs:range
+ ] .
+
+[ rdf:type rdfs:range
+ ] .
+
+[ rdf:type rdfs:range
+ ] .
+
+[ rdf:type rdfs:range
+ ] .
+
+[ rdf:type rdfs:range
+ ] .
+
+[ rdf:type rdfs:range
+ ] .
+
+[ rdf:type rdfs:range
+ ] .
+
+[ rdf:type rdfs:range
+ ] .
+
+[ rdf:type rdfs:range
+ ] .
+
+[ rdf:type rdfs:range
+ ] .
+
+[ rdf:type rdfs:range
+ ] .
+
+[ rdf:type rdfs:range
+ ] .
+
+[ rdf:type rdfs:range
+ ] .
+
+[ rdf:type rdfs:range
+ ] .
+
+
