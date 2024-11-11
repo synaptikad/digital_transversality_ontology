@@ -1,0 +1,90 @@
+
+@prefix ex: <http://example.org/building#> .
+@prefix dt: <http://digitaltransversality.org/ontology#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Building Overview
+ex:SmartBuilding a dt:Building ;
+    dt:hasName "Example Smart Building" ;
+    dt:locatedIn "City Center" ;
+    dt:hasExpectedCapabilities ex:ComfortManagement, ex:SpaceUtilization, ex:AVIntegration, ex:DigitalConnectivity .
+
+# Expected Capabilities
+ex:ComfortManagement a dt:Capability ;
+    dt:description "Ability to maintain thermal comfort dynamically based on room occupancy and external temperature" ;
+    dt:hasAssociatedSystem ex:HVACSystem, ex:ThermalSensors, ex:OccupancySensors .
+
+ex:SpaceUtilization a dt:Capability ;
+    dt:description "Optimizes the allocation of spaces based on booking and occupancy data" ;
+    dt:hasAssociatedSystem ex:RoomBookingSystem, ex:OccupancySensors .
+
+ex:AVIntegration a dt:Capability ;
+    dt:description "Seamless AV system integration for conference and meeting rooms" ;
+    dt:hasAssociatedSystem ex:AVSystem, ex:RoomBookingSystem .
+
+ex:DigitalConnectivity a dt:Capability ;
+    dt:description "Ensures connectivity across various devices using KNX, BACnet, and MQTT protocols" ;
+    dt:hasAssociatedSystem ex:NetworkInfrastructure .
+
+# Systems
+ex:HVACSystem a dt:System ;
+    dt:systemType "Heating, Ventilation, and Air Conditioning" ;
+    dt:controls ex:Temperature, ex:Humidity .
+
+ex:ThermalSensors a dt:Sensor ;
+    dt:measures ex:Temperature ;
+    dt:locatedIn ex:MeetingRoom1, ex:OfficeSpace1 .
+
+ex:OccupancySensors a dt:Sensor ;
+    dt:measures ex:OccupancyStatus ;
+    dt:locatedIn ex:MeetingRoom1, ex:OfficeSpace1 .
+
+ex:AVSystem a dt:System ;
+    dt:systemType "Audio/Video Integration" ;
+    dt:controls ex:Projector, ex:SoundSystem ;
+    dt:locatedIn ex:ConferenceRoom1 .
+
+ex:RoomBookingSystem a dt:System ;
+    dt:systemType "Booking Management" ;
+    dt:integratesWith ex:OccupancySensors, ex:AVSystem ;
+    dt:facilitates ex:RoomBooking .
+
+ex:NetworkInfrastructure a dt:System ;
+    dt:systemType "Digital Connectivity" ;
+    dt:supportsProtocol "KNX", "BACnet", "MQTT" .
+
+# Spaces
+ex:MeetingRoom1 a dt:Space ;
+    dt:spaceType "Meeting Room" ;
+    dt:hasCapacity "10 persons" ;
+    dt:isEquippedWith ex:ThermalSensors, ex:OccupancySensors, ex:AVSystem .
+
+ex:OfficeSpace1 a dt:Space ;
+    dt:spaceType "Office" ;
+    dt:hasCapacity "20 persons" ;
+    dt:isEquippedWith ex:ThermalSensors, ex:OccupancySensors .
+
+# Connectivity and Data Points
+ex:Temperature a dt:DataPoint ;
+    dt:dataType xsd:float ;
+    dt:unit "Celsius" ;
+    dt:associatedSensor ex:ThermalSensors ;
+    dt:UUID "uuid-temp-001" .
+
+ex:OccupancyStatus a dt:DataPoint ;
+    dt:dataType xsd:boolean ;
+    dt:associatedSensor ex:OccupancySensors ;
+    dt:UUID "uuid-occ-001" .
+
+ex:RoomBooking a dt:DataPoint ;
+    dt:dataType xsd:string ;
+    dt:associatedSystem ex:RoomBookingSystem ;
+    dt:UUID "uuid-book-001" .
+
+# Sample Scenario
+# - Adjust room temperature based on occupancy
+ex:Scenario1 a dt:UseCase ;
+    dt:description "Manage room temperature dynamically based on occupancy status" ;
+    dt:involves ex:MeetingRoom1 ;
+    dt:triggers ex:HVACSystem ;
+    dt:usesDataPoints ex:OccupancyStatus, ex:Temperature .

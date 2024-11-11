@@ -1,0 +1,131 @@
+
+@prefix : <http://example.org/building#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# Define basic classes for the building model
+
+:Building a owl:Class ;
+    rdfs:label "Building" .
+
+:Space a owl:Class ;
+    rdfs:label "Space" .
+
+:Room a owl:Class ;
+    rdfs:subClassOf :Space ;
+    rdfs:label "Room" .
+
+:Capacity a owl:Class ;
+    rdfs:label "Capacity" .
+
+:System a owl:Class ;
+    rdfs:label "System" .
+
+:Equipment a owl:Class ;
+    rdfs:label "Equipment" .
+
+:User a owl:Class ;
+    rdfs:label "User" .
+
+# Define properties
+:hasSpace a rdf:Property ;
+    rdfs:domain :Building ;
+    rdfs:range :Space ;
+    rdfs:label "has space" .
+
+:hasCapacity a rdf:Property ;
+    rdfs:domain :Space ;
+    rdfs:range :Capacity ;
+    rdfs:label "has capacity" .
+
+:hasSystem a rdf:Property ;
+    rdfs:domain :Space ;
+    rdfs:range :System ;
+    rdfs:label "has system" .
+
+:hasEquipment a rdf:Property ;
+    rdfs:domain :System ;
+    rdfs:range :Equipment ;
+    rdfs:label "has equipment" .
+
+:monitoredBy a rdf:Property ;
+    rdfs:domain :Capacity ;
+    rdfs:range :Equipment ;
+    rdfs:label "monitored by" .
+
+:usedBy a rdf:Property ;
+    rdfs:domain :Space ;
+    rdfs:range :User ;
+    rdfs:label "used by" .
+
+:linkedTo a rdf:Property ;
+    rdfs:domain :Equipment ;
+    rdfs:range :System ;
+    rdfs:label "linked to" .
+
+:connectsTo a rdf:Property ;
+    rdfs:domain :Equipment ;
+    rdfs:range :System ;
+    rdfs:label "connects to" .
+
+# Example instances for the model
+
+:Building_1 a :Building ;
+    rdfs:label "Main Office Building" ;
+    :hasSpace :Room_101 , :Room_102 , :Room_103 .
+
+:Room_101 a :Room ;
+    rdfs:label "Conference Room" ;
+    :hasCapacity :TemperatureControl , :OccupancyMonitoring ;
+    :hasSystem :HVAC_System , :Lighting_System ;
+    :usedBy :Employees .
+
+:Room_102 a :Room ;
+    rdfs:label "Office Room 1" ;
+    :hasCapacity :TemperatureControl ;
+    :hasSystem :HVAC_System ;
+    :usedBy :Employees .
+
+:Room_103 a :Room ;
+    rdfs:label "Office Room 2" ;
+    :hasCapacity :TemperatureControl ;
+    :hasSystem :HVAC_System ;
+    :usedBy :Employees .
+
+:TemperatureControl a :Capacity ;
+    rdfs:label "Temperature Control" ;
+    :monitoredBy :Temp_Sensor_101 .
+
+:OccupancyMonitoring a :Capacity ;
+    rdfs:label "Occupancy Monitoring" ;
+    :monitoredBy :Occupancy_Sensor_101 .
+
+:HVAC_System a :System ;
+    rdfs:label "HVAC System" ;
+    :hasEquipment :Temp_Sensor_101 , :Thermostat_101 .
+
+:Lighting_System a :System ;
+    rdfs:label "Lighting System" ;
+    :hasEquipment :Light_Controller_101 .
+
+:Temp_Sensor_101 a :Equipment ;
+    rdfs:label "Temperature Sensor" ;
+    :linkedTo :HVAC_System .
+
+:Thermostat_101 a :Equipment ;
+    rdfs:label "Thermostat" ;
+    :linkedTo :HVAC_System .
+
+:Occupancy_Sensor_101 a :Equipment ;
+    rdfs:label "Occupancy Sensor" ;
+    :linkedTo :HVAC_System .
+
+:Light_Controller_101 a :Equipment ;
+    rdfs:label "Light Controller" ;
+    :linkedTo :Lighting_System .
+
+:Employees a :User ;
+    rdfs:label "Employees" .
+
