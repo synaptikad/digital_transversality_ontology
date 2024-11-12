@@ -2,11 +2,11 @@
 
 Une ontologie unifiée pour les bâtiments intelligents intégrant tous les aspects: capacités, systèmes, équipements, espaces et utilisateurs.
 
-## 🎯 Objectif
+##  Objectif
 
 Cette ontologie vise à fournir un modèle de données standardisé pour le concept de transversalité digitale
 
-## 📚 Structure de l'Ontologie
+##  Structure de l'Ontologie
 
 L'ontologie est organisée autour de concepts clés :
 - **Attentes (Expectations)** : Objectifs et niveaux de performance visés
@@ -17,33 +17,7 @@ L'ontologie est organisée autour de concepts clés :
 - **Utilisateurs (Users)** : Acteurs et rôles
 - **Transversalité Numérique** : Continuité et cohérence des données
 
-## 🛠 Technologies
 
-- Format : OWL (Web Ontology Language)
-- Compatibilité : Protégé, TopBraid, etc.
-- Validation : Shapes Constraint Language (SHACL)
-
-
-## 📋 Roadmap
-
-- [ ] Validation SHACL complète
-- [ ] Ajout de cas d'usage supplémentaires
-- [ ] Intégration avec d'autres standards (BrickSchema, Project Haystack, etc.)
-- [ ] Extension pour les smart cities
-- [ ] Développement d'outils de visualisation
-
-## 🤝 Comment Utiliser
-
-```turtle
-# Exemple d'utilisation en SPARQL
-PREFIX smart: <http://www.synaptik.tech/smart_building#>
-
-SELECT ?system ?capacity
-WHERE {
-    ?system a smart:System ;
-            smart:provides ?capacity .
-}
-```
 
 ## 📄 Licence
 
