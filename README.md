@@ -21,7 +21,7 @@ L'ontologie est organisée autour de concepts clés :
 
 ## 📄 Licence
 
-Ce projet est sous licence BSD 3-Clause. Vous êtes libre de contribuer et de réutiliser cette ontologie pour des applications variées dans le Smart Building, tout en respectant les conditions de la licence.
+Ce projet est sous licence BSD 3-Clause. Vous êtes libre de contribuer et de réutiliser cette ontologie, tout en respectant les conditions de la licence.
 
 
 ## Contact
