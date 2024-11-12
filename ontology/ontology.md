@@ -1,4 +1,4 @@
-Attentes (Expectation)
+I)Attentes (Expectation)
 
 A. Catégories d'Attentes (ExpectationCategory)
 
@@ -33,7 +33,7 @@ WiredScore
 SRI (Smart Readiness Indicator)
 
 
-Capacités (Capacity)
+II) Capacités (Capacity)
 A. Capacités de Gestion du Bâtiment (BuildingManagementCapacity)
 
 Suivi des actifs (AssetTracking)
@@ -84,7 +84,7 @@ Systèmes IT (ITSystemCapacity)
 
 
 
-Systèmes (System)
+III) Systèmes (System)
 A. Systèmes Opérationnels (OTSystem)
 
 Système HVAC (HVACSystem)
@@ -129,7 +129,7 @@ Ascenseurs (ElevatorSystem)
 Parking (ParkingSystem)
 
 
-Equipements (Equipment)
+IV) Equipements (Equipment)
 A. Équipements IT (ITEquipment)
 B. Équipements Opérationnels (OTEquipment)
 
@@ -148,8 +148,10 @@ H. Équipements Spécialisés (SpecializedEquipment)
 I. Transport vertical (VerticalTransportEquipment)
 J. Urgence (EmergencyManagementEquipment)
 
+V) Utilsateurs (User)
 
-Espaces (Space)
+VI) Espaces (Space)
+
 A. Sites et Bâtiments
 
 Site (Site)
@@ -170,7 +172,7 @@ Espaces de Circulation (CirculationSpace)
 • Escalier (Stairway)
 
 
-Propriétés des Relations (ObjectProperty)
+VII) Propriétés des Relations (ObjectProperty)
 A. Relations Spatiales
 
 adjacentTo : relie espaces adjacents
@@ -217,7 +219,8 @@ validatesDataFlow : validation données
 mirrorsRealWorld : reflet réel/virtuel
 
 
-Propriétés des Données (DataProperty)
+VIII) Propriétés des Données (DataProperty)
+
 A. Identifiants et Métadonnées
 
 hasIdentifier : identifiant unique
@@ -262,7 +265,8 @@ hasReferentialScore : score référentiel
 hasTargetLevel : niveau cible
 
 
-Contexte Temporel (TimeContext)
+IX) Contexte Temporel (TimeContext)
+
 A. Périodes Standard
 
 Heures ouvrées (BusinessHours)
@@ -275,15 +279,16 @@ Période maintenance (MaintenancePeriod)
 Période urgence (EmergencyPeriod)
 
 
-États et Niveaux d'Implémentation (ImplementationLevel)
+XI) États et Niveaux d'Implémentation (ImplementationLevel)
 
 Complètement implémenté (FullyImplemented)
 Partiellement implémenté (PartiallyImplemented)
 Planifié (PlannedImplementation)
 
-Digital Transversality (Transversalité Numérique)
+XII) Digital Transversality (Transversalité Numérique)
 
 Concepts Fondamentaux (DigitalTransversalityConcept)
+
 A. Gestion et Supervision
 
 Gestionnaire de transversalité numérique (DigitalTransversalityManager)
@@ -318,6 +323,7 @@ Points de données (DataPoint)
 - generatesData : Génération par les équipements
 - tracksDataFlow : Suivi des flux
 - validatesDataFlow : Validation des flux
+- 
 Métadonnées des points de données (DataPointMetadata)
 • Description des données collectées
 • Structure et format des données
@@ -327,7 +333,8 @@ E. État de Synchronisation (SynchronizationStatus)
 Suivi de l'état de synchronisation entre physique et numérique
 
 
-Relations Clés pour la Transversalité Numérique
+XIII) Relations Clés pour la Transversalité Numérique
+
 A. Liens Physique-Numérique
 
 mirrorsRealWorld : Lien réalité physique/modèle numérique
