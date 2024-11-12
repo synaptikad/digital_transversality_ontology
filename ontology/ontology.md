@@ -3,18 +3,25 @@ A. Catégories d'Attentes (ExpectationCategory)
 
 Fondation Technologique (TechnologyFoundation)
 • Évalué par SmartScore et WiredScore
+
 Connectivité Numérique (DigitalConnectivity)
 • Évalué par WiredScore
+
 Performance Énergétique (EnergyPerformance)
 • Évalué par SRI
+
 Durabilité (Sustainability)
 • Évalué par SmartScore, BREEAM, NABERS
+
 Expérience Utilisateur (UserExperience)
 • Évalué par SmartScore
+
 Flexibilité Réseau (GridFlexibility)
 • Évalué par SRI
+
 Résilience Technique (TechnicalResilience)
 • Évalué par WiredScore
+
 
 B. Schémas de Certification (CertificationScheme)
 
